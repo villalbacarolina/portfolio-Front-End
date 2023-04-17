@@ -1,0 +1,44 @@
+section{
+    background-color: #3b2e42;
+    padding-bottom:17vh;
+}
+
+article{
+    width: 70%;
+    margin:auto;
+    padding:3em; /*se puede mejorar medida?*/
+    border:0.6rem solid #fa4347;
+    padding-bottom: 150px; /*se puede mejorar medida?*/
+}
+
+h3{
+    color: #fa4347;
+    text-align: center ;
+    font-size:4.5rem;
+}
+h4{
+    font-size:2.5rem; /*hacer que se adapte al tamanio de contenedor*/
+}
+p{
+    font-size: 1.5rem;
+}
+
+#title{
+    color: #fa4347;
+    list-style: none;
+}
+
+
+
+/*
+#title{
+    display: flex;
+    flex-wrap: wrap;
+	
+}
+
+.edit-delete{
+    
+    align-items: flex-start;
+    display: inline-flex;
+  }*/

@@ -1,0 +1,23 @@
+section{
+    background-color: #3b2e42;
+    
+}
+
+h3{
+    color: #fa4347;
+    margin:0px;
+    font-size:4.5rem;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+    margin-top:5vh; /*se puede mejorar?*/
+}
+  
+#about-me{
+    background-color: #423549;
+    color: #fa4347;
+    font-size: 1.5rem; /*va aca?*/
+    padding: 0.8em;
+    padding-bottom:10%; /*se puede mejorar?*/
+    margin-bottom:17vh; /*se puede mejorar?*/
+}
+

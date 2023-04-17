@@ -1,0 +1,56 @@
+/********Waves*********/
+
+.banner {
+  /*rellenar dato*/
+    background: linear-gradient(rgba(250, 67, 71, 0.8), rgba(250, 67, 71, 1)),
+      url('https://images.contentstack.io/v3/assets/blt187521ff0727be24/bltc6e788b11a9c8245/60ee0f71a86d0f5a0be449a3/MissFortune_0.jpg');
+    height: max-content;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .banner .waves {
+    position: relative;
+  }
+  
+  /********Text*********/
+  
+  h1,h2 {
+    color: #3b2e42;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  h1 {
+    font-size: 4.5rem; /*mejor que se adapte al contenedor*/
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  .titles{
+    text-align: center;
+  }
+  
+  /********Profile picture*********/
+  
+#profile-pic {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-pic {
+    width: 43vh;
+    height: 43vh;
+    margin-top: 10vh;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .profile-pic img {
+    width: auto;
+    height: 100%;
+  }

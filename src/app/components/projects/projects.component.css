@@ -1,0 +1,56 @@
+section{
+    background-color: #423549;
+}
+article{
+    padding:5%;
+}
+
+h3{
+    color: #fa4347;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 4.5rem;
+    align-items: center;
+}
+
+/***Project***/
+
+#project{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project{
+	background: url("src/assets/images/project-color.jpg");
+	background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding:1em;
+    margin:1em;
+	width:50vh;
+	height:50vh;
+}
+
+.project:hover{
+	background: url("src/assets/images/RescateCapuchino.jpg"); /*rellenar dato*/
+	background-position: center;
+	background-size: cover;
+    transition: background 2s;
+}
+
+#text{
+    text-align: center;
+    vertical-align: middle;
+    color: #fa4347;
+}
+
+h4{
+    font-size:2.5rem;
+}
+
+p{
+    font-size:1.5rem;
+}

@@ -1,0 +1,41 @@
+{
+
+    "about":
+    [
+        {
+            "id": 1,
+            "paragraph":"Desarrolladora. Vivo en Buenos Aires. 2/4/2002."
+        }
+    ],
+
+    "experience":
+    [
+        {
+            "id":2,
+            "position": "Diseñadora, Sublimadora",
+            "company": "Estamphada",
+            "date": "2018-2021",
+            "description": "lorem asdsakdjansdkjansdkjansdjk  dsakdn asdkjnaskdj skdjnas ksjdnk o oiwqeoi nkajsdn"
+        }
+    ],
+
+    "studies":
+    [
+        {
+            "id": 3,
+            "title": "Lic. en Sistemas",
+            "institution": "Universidad Nacional de General Sarmiento",
+            "date": "2021 - actualidad",
+            "url":"#"
+        },
+        {
+            "id": 4,
+            "title": "Desarrolladora Web Full-Stack Jr.",
+            "institution": "Argentina Programa",
+            "date": "2022/10 - 2023/5",
+            "url":"#"
+        }
+    ]
+    
+
+}

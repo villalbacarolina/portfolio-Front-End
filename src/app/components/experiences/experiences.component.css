@@ -1,0 +1,41 @@
+section{
+    background-color: #3b2e42;
+    padding-bottom:17vh;
+}
+
+h3{
+    color: #fa4347;
+    margin:0px;
+    margin-bottom:0px;
+    font-size:4.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+h4{
+    color: #3b2e42;
+    font-size:2.5rem;
+}
+h5{
+    color: #3b2e42;
+    font-size:1.55rem;
+}
+p{
+    font-size: 1.5rem;
+}
+  
+#experience{
+    font-size: 1.5rem;
+    width: 70%;
+    color: #423549;
+    background-color:#fa4347;
+    padding: 0.8em;
+    padding-bottom:10%; /*se puede mejorar?*/
+    margin-bottom:5vh;
+}
+
+/*
+.edit-delete{
+    display: flex;
+    align-items: flex-start;
+}
+*/
+  
