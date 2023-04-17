@@ -12,9 +12,10 @@
     [
         {
             "id":2,
-            "position": "Diseñadora, Sublimadora",
+            "job": "Diseñadora, Sublimadora",
             "company": "Estamphada",
-            "date": "2018-2021",
+            "startDate": "2018-2021",
+            "endDate": "2018-2021",
             "description": "lorem asdsakdjansdkjansdkjansdjk  dsakdn asdkjnaskdj skdjnas ksjdnk o oiwqeoi nkajsdn"
         }
     ],

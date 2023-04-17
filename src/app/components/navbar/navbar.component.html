@@ -2,7 +2,7 @@
     <div class="container-fluid">
         
         <!--logo-->
-        <a class="navbar-brand" href="/"> <!--terminar-->
+        <a class="navbar-brand" href="/"> <!--link/tamanio-->
             <img src="https://fekouti.com/img/arg-prog.png" alt="Logo" width="137" height="40" class="d-inline-block align-text-center">
         </a>
         
@@ -11,19 +11,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
   
-        <!--open menu-->
+        <!--opened menu-->
         <div class="collapse navbar-collapse" id="menu">
-            <!--*ngFor-->
+            <!--recorrer-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-link">
-                    <a href="#">
-                        <img src="../../assets/svg/github.svg" alt="Linkedin icon" height="40" width="40" /> <!--mejorar tamanio-->
-                    </a> <!--rellenar datos-->
+                    <a href="#"> <!-- rellenar dato-->
+                        <img src="../../assets/svg/github.svg" 
+                        alt="Linkedin icon" height="40" width="40" /> <!--mejorar tamanio-->
+                        <!--rellenar dato-->
+                    </a> <!--rellenar dato-->
                 </li>
             </ul>
 
 
         <!-- log in button-->
+        <!--editar disenio en componente aparte, falta el de salir-->
 
           <!--*ngIf="!loggedIn" (click)="signIn()" 
           *ngIf="loggedIn" (click)="signOut()"-->
@@ -31,10 +34,9 @@
                 <a routerLink="/acceder">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Acceder
-                </button>
+                    </button>
                 </a>
             </li>
-  
       </div>
   
     </div>
