@@ -2,17 +2,19 @@
     <article>
         <div class="container-fluid">
       
-            <div class="row align-items-start">
-                <div class="col-9">
-                    <h3>EXPERIENCIA</h3> <app-experience-modal></app-experience-modal>
-                </div>
-                <div class="col-3">
-                </div>
-            </div>
+            <div class="title-add">
+                <h3>EXPERIENCIA</h3>
+                <app-experiences-add-modal></app-experiences-add-modal>
+            </div> 
       
-            <div class="row align-items-start">
+            <div class="row align-items-start"> 
                 <div class="col-9" id="experience"> <!--*ngFor="let data of experience"-->
-                    <h4>Puesto</h4> <!--rellenar dato-->
+                    <!--agregar espacio entre botones-->
+                    <div class="article-buttons">
+                        <h4>Puesto</h4> 
+                        <app-experiences-edit-modal></app-experiences-edit-modal>
+                        <app-delete-modal></app-delete-modal>
+                    </div>
                     <h5>Compañia</h5>  <!--rellenar dato-->
                     <h5>aaaa/mm/dd - aaaa/mm/dd</h5>  <!--rellenar dato-->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, velit corporis, 

@@ -32,10 +32,18 @@ p{
     margin-bottom:5vh;
 }
 
-/*
-.edit-delete{
+
+.title-add{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
-*/
+
+.article-buttons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
   

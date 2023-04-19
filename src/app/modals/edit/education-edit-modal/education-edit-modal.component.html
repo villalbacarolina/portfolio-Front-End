@@ -1,0 +1,40 @@
+
+<!--editar disenio. fijate que los tamanios coinicidan con los de tu base de datos-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#education-edit">
+    Editar
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="education-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar estudio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form action="">
+                <label>Título:</label><br>
+                <input type="text" name="title" size="40" maxlength="40" >
+            </form>
+            <form action="">
+                <label>Institución:</label><br>
+                <input type="text" name="institution" size="40" maxlength="40">
+            </form>
+            <label>Fecha de inicio:</label>
+            <br>
+            <input type="date" name="startDate" min="2010-01-01" max="2023-07-31">
+            <br>
+            <label>Fecha de fin (opcional):</label>
+            <br>
+            <input type="date" name="endDate" min="2010-01-01" max="2023-07-31"> <!--opcional, hacerlos opcionales-->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Editar</button>
+      </div>
+    </div>
+  </div>

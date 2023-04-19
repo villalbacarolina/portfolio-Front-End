@@ -1,8 +1,12 @@
 <section>
     <article>
-        <h3>HARD SKILLS</h3>
-        <div class="hard-skills">
+        <div class="title-add-hard">
+            <h3>HARD SKILLS</h3> <app-hard-skills-add-modal></app-hard-skills-add-modal> <!--arreglar posicion-->
+        </div> 
+            <div class="hard-skills">
             <div class="hard-skill"> <!--aca se recorre-->
+                <app-hard-skill-edit-modal></app-hard-skill-edit-modal>
+                <app-delete-modal></app-delete-modal> <!--arreglar posicion-->
                 <svg id="svg_circle" viewBox = '0 0 24 24'> <!--rellenar dato-->
                     <defs>
                         <linearGradient id="fill-horizontally">
@@ -29,12 +33,16 @@
     </article>
 
     <article>
-        <h3 class="soft">SOFT SKILLS</h3>
+        <div class="title-add-soft">
+            <app-soft-skills-add-modal></app-soft-skills-add-modal>
+            <h3 class="soft">SOFT SKILLS</h3> 
+        </div>
         <ul class="soft"> <!--rellenar datos-->
-            <li>Creatividad</li>
-            <li>Trabajo en equipo</li>
-            <li>Excelente comunicación</li>
-            <li>Buenos memes de programación</li>
+            <div class="buttons">
+                <app-soft-skill-edit-modal></app-soft-skill-edit-modal> <!--arreglar posicion-->
+                <app-delete-modal></app-delete-modal>
+                <li>Creatividad</li>
+            </div>
         </ul>
     </article>
 </section>

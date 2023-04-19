@@ -55,3 +55,22 @@ li{
     font-size: 1.5rem;
     list-style: none;
 }
+
+/****BUTTONS****/
+
+.title-add-hard{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.title-add-soft{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.buttons{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}

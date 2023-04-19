@@ -7,16 +7,10 @@ import { usersService } from 'src/app/service/users.service';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit{
-  //falta hacer esto en los demas componentes
-  //ya puedo recorrer y usar el json
-  experience:any;
-  constructor(private expData: usersService){}
   
-  ngOnInit(): void{
-    this.expData.getData().subscribe(data =>{
-      this.experience=data.experience;
-    }); 
-  //post,etc.
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+  
 
 }

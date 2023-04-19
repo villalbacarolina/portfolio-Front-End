@@ -1,0 +1,40 @@
+
+<!--editar disenio. fijate que los tamanios coinicidan con los de tu base de datos-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#social-media-add">
+    Añadir red social
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="social-media-add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Añadir red social</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form action="#">
+                <label for="lang">Red social:</label><br>
+                <select name="level" id="lang">
+                  <option value="selecciona">Seleccione la red que desea añadir</option>
+                  <option value="github">Github</option>
+                  <option value="linkedin">Linkedin</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="youtube">Youtube</option>
+                  <option value="twitter">Twitter</option>
+                </select>
+          </form>
+          <form action="">
+            <label>URL:</label><br>
+            <input type="text" name="url">
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Añadir</button>
+      </div>
+    </div>
+  </div>

@@ -16,12 +16,21 @@ import { RegisterInputComponent } from './components/login/register-input/regist
 import { LoginButtonComponent } from './components/navbar/login-button/login-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
-import { AboutMeModalComponent } from './modals/about-me-modal/about-me-modal.component';
-import { ExperienceModalComponent } from './modals/experience-modal/experience-modal.component';
-import { EducationModalComponent } from './modals/education-modal/education-modal.component';
-import { ProjectsModalComponent } from './modals/projects-modal/projects-modal.component';
-import { HeaderModalComponent } from './modals/header-modal/header-modal.component';
-import { NavbarSocialMediaModalComponent } from './modals/navbar-social-media-modal/navbar-social-media-modal.component';
+import { DeleteModalComponent } from './modals/delete/delete-modal/delete-modal.component';
+import { ExperiencesEditModalComponent } from './modals/edit/experiences-edit-modal/experiences-edit-modal.component';
+import { ExperiencesAddModalComponent } from './modals/add/experiences-add-modal/experiences-add-modal.component';
+import { EducationAddModalComponent } from './modals/add/education-add-modal/education-add-modal.component';
+import { HardSkillsAddModalComponent } from './modals/add/hard-skills-add-modal/hard-skills-add-modal.component';
+import { SoftSkillsAddModalComponent } from './modals/add/soft-skills-add-modal/soft-skills-add-modal.component';
+import { ProjectsAddModalComponent } from './modals/add/projects-add-modal/projects-add-modal.component';
+import { AboutMeEditModalComponent } from './modals/edit/about-me-edit-modal/about-me-edit-modal.component';
+import { HardSkillEditModalComponent } from './modals/edit/hard-skill-edit-modal/hard-skill-edit-modal.component';
+import { EducationEditModalComponent } from './modals/edit/education-edit-modal/education-edit-modal.component';
+import { SoftSkillEditModalComponent } from './modals/edit/soft-skill-edit-modal/soft-skill-edit-modal.component';
+import { SocialMediaAddModalComponent } from './modals/add/social-media-add-modal/social-media-add-modal.component';
+import { ProjectsEditModalComponent } from './modals/edit/projects-edit-modal/projects-edit-modal.component';
+import { HeaderEditModalComponent } from './modals/edit/header-edit-modal/header-edit-modal.component';
+import { SocialMediaDeleteModalComponent } from './modals/delete/social-media-delete-modal/social-media-delete-modal.component';
 
 
 @NgModule({
@@ -39,12 +48,21 @@ import { NavbarSocialMediaModalComponent } from './modals/navbar-social-media-mo
     RegisterInputComponent,
     LoginButtonComponent,
     IndexComponent,
-    AboutMeModalComponent,
-    ExperienceModalComponent,
-    EducationModalComponent,
-    ProjectsModalComponent,
-    HeaderModalComponent,
-    NavbarSocialMediaModalComponent,
+    AboutMeEditModalComponent,
+    DeleteModalComponent,
+    ExperiencesEditModalComponent,
+    ExperiencesAddModalComponent,
+    EducationAddModalComponent,
+    HardSkillsAddModalComponent,
+    SoftSkillsAddModalComponent,
+    ProjectsAddModalComponent,
+    HardSkillEditModalComponent,
+    EducationEditModalComponent,
+    SoftSkillEditModalComponent,
+    SocialMediaAddModalComponent,
+    ProjectsEditModalComponent,
+    HeaderEditModalComponent,
+    SocialMediaDeleteModalComponent
   ],
   imports: [
     BrowserModule,
