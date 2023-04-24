@@ -15,26 +15,34 @@
         </div>
         <div class="modal-body">
           
-            <form action="">
+            <form [formGroup]="formValue">
+              <div>
                 <label>Título:</label><br>
-                <input type="text" name="title" size="40" maxlength="40" >
-            </form>
-            <form action="">
+                <input type="text" formControlName="title" maxlength="40" >
+              </div>
+              <div>
                 <label>Institución:</label><br>
-                <input type="text" name="institution" size="40" maxlength="40">
+                <input type="text" formControlName="institution" maxlength="40">
+              </div>
+              <div>
+                <label>Fecha de inicio:</label>
+                <br>
+                <input type="date" formControlName="startDate" min="2010-01-01" max="2023-07-31">
+              </div>
+              <div>
+                <label>Fecha de fin (opcional):</label>
+                <br>
+                <input type="date" formControlName="endDate" min="2010-01-01" max="2023-07-31"> <!--opcional, hacerlos opcionales-->
+              </div>
+              <div>
+                <label>URL del certificado (opcional):</label><br>
+                <input type="text" formControlName="url">
+              </div>
             </form>
-            <label>Fecha de inicio:</label>
-            <br>
-            <input type="date" name="startDate" min="2010-01-01" max="2023-07-31">
-            <br>
-            <label>Fecha de fin (opcional):</label>
-            <br>
-            <input type="date" name="endDate" min="2010-01-01" max="2023-07-31"> <!--opcional, hacerlos opcionales-->
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Añadir</button>
+        <button type="button" (click)="postEducation()" class="btn btn-primary">Añadir</button>
       </div>
     </div>
   </div>

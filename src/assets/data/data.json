@@ -8,7 +8,7 @@
         }
     ],
 
-    "experience":
+    "experiences":
     [
         {
             "id":2,
@@ -35,7 +35,7 @@
             "title": "titlestudy",
             "institution": "institutionstudy",
             "startDate": "startstudy",
-            "endDAte":"endstudy",
+            "endDate":"endstudy",
             "url":"urlstudy"
         },
         {
@@ -43,11 +43,11 @@
             "title": "titlestudy2",
             "institution": "institutionstudy2",
             "startDate": "startstudy2",
-            "endDAte":"endstudy2",
+            "endDate":"endstudy2",
             "url":"urlstudy2"
         }
     ],
-    "hard-skills":
+    "hardSkills":
     [
         {
             "id":6,
@@ -71,15 +71,15 @@
             "d": "M11.677 13.196l-0.289-3.387 12.536 0.004 0.287-3.268-16.421-0.004 0.87 9.983h11.374l-0.406 4.27-3.627 1.002-3.683-1.009-0.234-2.63h-3.252l0.411 5.198 6.757 1.807 6.704-1.798 0.927-10.166h-11.954zM2.914 1.045h26.172l-2.38 26.874-10.734 3.037-10.673-3.038z"
         }
     ],
-    "soft-skills":
+    "softSkills":
     [
         {
             "id":6,
-            "soft-skill": "soft"
+            "softSkill": "soft"
         },
         {
             "id":7,
-            "soft-skill": "soft2"
+            "softSkill": "soft2"
         }
     ],
     "projects":
@@ -88,15 +88,15 @@
             "id":8,
             "title": "protitle",
             "description": "prodesc",
-            "img": "proimg",
-            "url": "https://cdn.ome.lt/na9I21fxm5PuMF1Pr1bR5fL2ulw=/1200x630/smart/extras/conteudos/Life_is_Strange_-_Max_e_Chloe_57oFbXb.jpg"
+            "img": "https://cdn.ome.lt/na9I21fxm5PuMF1Pr1bR5fL2ulw=/1200x630/smart/extras/conteudos/Life_is_Strange_-_Max_e_Chloe_57oFbXb.jpg",
+            "url": "url"
         },
         {
             "id":9,
             "title": "protitle2",
             "description": "prodesc2",
-            "img": "proimg2",
-            "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93682f1b-8363-4403-997b-b6c5c38e2d73/dbrexfc-14297598-a0d7-42ff-b98c-dd419e40bb3b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzNjgyZjFiLTgzNjMtNDQwMy05OTdiLWI2YzVjMzhlMmQ3M1wvZGJyZXhmYy0xNDI5NzU5OC1hMGQ3LTQyZmYtYjk4Yy1kZDQxOWU0MGJiM2IucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.L64UCdXyacOOI9mKbagvnzotfaILnH4IgsapQQD_ZOA"
+            "img": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93682f1b-8363-4403-997b-b6c5c38e2d73/dbrexfc-14297598-a0d7-42ff-b98c-dd419e40bb3b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzNjgyZjFiLTgzNjMtNDQwMy05OTdiLWI2YzVjMzhlMmQ3M1wvZGJyZXhmYy0xNDI5NzU5OC1hMGQ3LTQyZmYtYjk4Yy1kZDQxOWU0MGJiM2IucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.L64UCdXyacOOI9mKbagvnzotfaILnH4IgsapQQD_ZOA",
+            "url": "url2"
         }
     ],
     "social-media":

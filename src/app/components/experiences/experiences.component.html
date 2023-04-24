@@ -8,19 +8,16 @@
             </div> 
       
             <div class="row align-items-start"> 
-                <div class="col-9" id="experience"> <!--*ngFor="let data of experience"-->
+                <div class="col-9" id="experience" *ngFor="let experience of experiences">
                     <!--agregar espacio entre botones-->
                     <div class="article-buttons">
-                        <h4>Puesto</h4> 
+                        <h4>{{experience.job}}</h4> 
                         <app-experiences-edit-modal></app-experiences-edit-modal>
                         <app-delete-modal></app-delete-modal>
                     </div>
-                    <h5>Compañia</h5>  <!--rellenar dato-->
-                    <h5>aaaa/mm/dd - aaaa/mm/dd</h5>  <!--rellenar dato-->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, velit corporis, 
-                        obcaecati quisquam repellat neque doloribus eum ut dolorum voluptatum molestiae, 
-                        similique quibusdam. Labore facilis debitis 
-                        harum perferendis minima qui?</p>  <!--rellenar dato-->
+                    <h5>{{experience.company}}</h5>  
+                    <h5>{{experience.startDate}} - {{experience.endDate}}</h5>
+                    <p>{{experience.description}}</p>  
                 </div>
                 <div class="col-3">
                 </div>

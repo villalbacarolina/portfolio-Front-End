@@ -1,0 +1,14 @@
+<article>
+    <div class="title-add-soft">
+        <app-soft-skills-add-modal></app-soft-skills-add-modal>
+        <h3 class="soft">SOFT SKILLS</h3> 
+    </div>
+    <ul class="soft" *ngFor="let soft of softSkills"> <!--rellenar datos-->
+        <div class="buttons">
+            <app-soft-skill-edit-modal></app-soft-skill-edit-modal> <!--arreglar posicion-->
+            <app-delete-modal></app-delete-modal>
+            <li>{{soft.softSkill}}</li>
+        </div>
+
+    </ul>
+</article>

@@ -1,0 +1,43 @@
+/****BACKGROUND*****/
+
+article{
+    padding:5%;
+}
+
+h3{
+    color: #423549;
+    text-align: start;
+    font-size:4.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5%;
+}
+/*****SOFT*****/
+
+.soft{
+    text-align: end;
+    color: #423549;
+}
+
+li{
+    font-size: 1.5rem;
+    list-style: none;
+}
+
+/****BUTTONS****/
+
+.title-add-hard{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.title-add-soft{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.buttons{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}

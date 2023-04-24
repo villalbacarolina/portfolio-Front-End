@@ -10,40 +10,44 @@ h3{
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     font-size: 4.5rem;
-    align-items: center;
 }
 
 /***Project***/
 
-#project{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+
 
 .project{
-	background: url("src/assets/images/project-color.jpg");
-	background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
+    position: relative;
+    display: inline-flex;
     justify-content: center;
-	padding:1em;
-    margin:1em;
-	width:50vh;
-	height:50vh;
-}
-
-.project:hover{
-	background: url("src/assets/images/RescateCapuchino.jpg"); /*rellenar dato*/
-	background-position: center;
-	background-size: cover;
-    transition: background 2s;
-}
-
-#text{
+    flex-wrap: wrap;
     text-align: center;
-    vertical-align: middle;
+    background-color: #3b2e42;
+    overflow: hidden;
+    
+    width: 28em;
+    height: 28em;
+    margin: 0.8em;
+    margin-top: 0em;
+}
+
+img{
+    filter: opacity(0);
+    transition:all .5s ease-in-out;
+    height: 100%;
+    
+}
+
+img:hover{
+    filter: opacity(0.5);
+    transition:all .5s ease-in-out;
+}
+ 
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fa4347;
 }
 

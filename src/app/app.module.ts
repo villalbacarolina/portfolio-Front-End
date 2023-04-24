@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
+import { usersService } from './service/users.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -32,6 +33,8 @@ import { SocialMediaAddModalComponent } from './modals/add/social-media-add-moda
 import { ProjectsEditModalComponent } from './modals/edit/projects-edit-modal/projects-edit-modal.component';
 import { HeaderEditModalComponent } from './modals/edit/header-edit-modal/header-edit-modal.component';
 import { SocialMediaDeleteModalComponent } from './modals/delete/social-media-delete-modal/social-media-delete-modal.component';
+import { HardSkillsComponent } from './components/skills/hard-skills/hard-skills.component';
+import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
 
 
 @NgModule({
@@ -63,12 +66,15 @@ import { SocialMediaDeleteModalComponent } from './modals/delete/social-media-de
     SocialMediaAddModalComponent,
     ProjectsEditModalComponent,
     HeaderEditModalComponent,
-    SocialMediaDeleteModalComponent
+    SocialMediaDeleteModalComponent,
+    HardSkillsComponent,
+    SoftSkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
