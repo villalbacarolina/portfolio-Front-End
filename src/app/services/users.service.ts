@@ -14,17 +14,16 @@ export class usersService {
   constructor(private http: HttpClient){}
 
   getData(): Observable<any> {
-    return this.http.get('./assets/data/data.json')
+    return this.http.get('http://localhost:3000/posts')
   }
 
   postData(data : any){
-    return this.http.post<any>('http://localhost:3000/', data)
+    return this.http.post<any>('http://localhost:3000/posts', data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
 
-  /*actualiza*/
   putData(data:any, id:number){ 
     return this.http.put<any>('http://localhost:3000/'+id, data)
     .pipe(map( (res:any)=>{

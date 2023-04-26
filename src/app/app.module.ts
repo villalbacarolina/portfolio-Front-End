@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { usersService } from './service/users.service';
+import { usersService } from './services/users.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -76,7 +76,7 @@ import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [usersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

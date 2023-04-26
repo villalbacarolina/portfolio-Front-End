@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EducationComponent } from 'src/app/components/education/education.component';
-import { usersService } from 'src/app/service/users.service';
+import { usersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-education-add-modal',
   templateUrl: './education-add-modal.component.html',
   styleUrls: ['./education-add-modal.component.css']
 })
-export class EducationAddModalComponent implements OnInit{
+export class EducationAddModalComponent { /*implements OnInit{
   formValue !: FormGroup;
   education: EducationComponent = new EducationComponent();
+  educations !:any;
+
   constructor(private fb: FormBuilder,
-    private user: usersService){} 
+    private uS: usersService){} 
 
   ngOnInit(): void {
     this.formValue = this.fb.group({
@@ -22,6 +24,7 @@ export class EducationAddModalComponent implements OnInit{
       endDate:[''],
       url:['']
     })
+    this.getEducations();
   }
 
   postEducation(){
@@ -31,15 +34,28 @@ export class EducationAddModalComponent implements OnInit{
     this.education.endDate = this.formValue.value.endDate;
     this.education.url = this.formValue.value.url;
 
-    this.user.postData(this.education)
-    .subscribe(res=>{
-      console.log(res);
-      alert("¡Educación añadida con éxito!.")
-    },
-    err=>{
-      alert("¡Error!.")
-    })
+    this.uS.postData(this.education)
+    .subscribe(
+      {
+      next: resp => {
+        console.log(resp);
+        alert("Añadido exitosamente.");
+        let ref= document.getElementById('cancel');
+        ref?.click();
+        this.formValue.reset();
+      },
+      error: err => {
+        console.log(err.error.msg);
+        alert("Error.");
+      }
+      });
+    }
+
+  getEducations(){
+    this.uS.getData()
+    .subscribe(res =>{
+      this.educations = res;
+      });
   }
-
-
+*/
 }

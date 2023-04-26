@@ -5,6 +5,7 @@
     Añadir
 </button>
   
+
   <!-- Modal -->
   <div class="modal fade" id="education-add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -13,9 +14,12 @@
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Añadir estudio</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
+
+          <!--
+          <p *ngFor="let e of educations">{{education.title}}</p> 
           
-            <form [formGroup]="formValue">
+            <form [formGroup]="formValue">-->
               <div>
                 <label>Título:</label><br>
                 <input type="text" formControlName="title" maxlength="40" >
@@ -38,11 +42,11 @@
                 <label>URL del certificado (opcional):</label><br>
                 <input type="text" formControlName="url">
               </div>
-            </form>
+            <!--</form>-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" (click)="postEducation()" class="btn btn-primary">Añadir</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Añadir</button> <!--(click)="postEducation()"-->
       </div>
     </div>
   </div>
