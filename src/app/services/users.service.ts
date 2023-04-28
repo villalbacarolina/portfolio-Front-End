@@ -1,5 +1,5 @@
 //conecta back con front y operaciones
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class usersService {
+  @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
 
@@ -25,14 +26,14 @@ export class usersService {
   }
 
   putData(data:any, id:number){ 
-    return this.http.put<any>('http://localhost:3000/'+id, data)
+    return this.http.put<any>('http://localhost:3000/posts/'+id, data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
 
   deleteData(id:number){ 
-    return this.http.delete<any>('http://localhost:3000/'+id)
+    return this.http.delete<any>('http://localhost:3000/posts/'+id)
     .pipe(map( (res:any)=>{
       return res;
     }))

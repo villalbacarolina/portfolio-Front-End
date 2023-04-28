@@ -7,7 +7,7 @@ import { usersService } from 'src/app/services/users.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects:any;
+  projects:any=[];
   constructor(private projectsData: usersService){}
 
   ngOnInit(): void {

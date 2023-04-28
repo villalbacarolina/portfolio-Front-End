@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EducationComponent } from 'src/app/components/education/education.component';
 import { usersService } from 'src/app/services/users.service';
+import { EducationModelComponent } from './education-add-modal-model.component';
 
 @Component({
   selector: 'app-education-add-modal',
   templateUrl: './education-add-modal.component.html',
   styleUrls: ['./education-add-modal.component.css']
 })
-export class EducationAddModalComponent { /*implements OnInit{
+export class EducationAddModalComponent implements OnInit{
   formValue !: FormGroup;
-  education: EducationComponent = new EducationComponent();
-  educations !:any;
+  educationModel: EducationModelComponent = new EducationModelComponent();
+  educationsData !:any;
+ 
 
   constructor(private fb: FormBuilder,
     private uS: usersService){} 
@@ -24,17 +25,17 @@ export class EducationAddModalComponent { /*implements OnInit{
       endDate:[''],
       url:['']
     })
-    this.getEducations();
   }
 
   postEducation(){
-    this.education.title = this.formValue.value.title;
-    this.education.institution = this.formValue.value.institution;
-    this.education.startDate = this.formValue.value.startDate;
-    this.education.endDate = this.formValue.value.endDate;
-    this.education.url = this.formValue.value.url;
+    this.educationModel.id = this.formValue.value.id;
+    this.educationModel.titleEd = this.formValue.value.title;
+    this.educationModel.institution = this.formValue.value.institution;
+    this.educationModel.startDate = this.formValue.value.startDate;
+    this.educationModel.endDate = this.formValue.value.endDate;
+    this.educationModel.url = this.formValue.value.url;
 
-    this.uS.postData(this.education)
+    this.uS.postData(this.educationModel)
     .subscribe(
       {
       next: resp => {
@@ -49,13 +50,18 @@ export class EducationAddModalComponent { /*implements OnInit{
         alert("Error.");
       }
       });
-    }
-
-  getEducations(){
-    this.uS.getData()
-    .subscribe(res =>{
-      this.educations = res;
-      });
   }
-*/
+
+
+  editEducation(education: any){
+    this.formValue.controls['titleEd'].setValue(education.titleEd);
+    this.formValue.controls['institution'].setValue(education.institution);
+    this.formValue.controls['startDate'].setValue(education.startDate);
+    this.formValue.controls['endDate'].setValue(education.endDate);
+    this.formValue.controls['url'].setValue(education.url);
+    // https://www.youtube.com/watch?v=I9mtyLg32nQ
+  }
+  
 }
+
+

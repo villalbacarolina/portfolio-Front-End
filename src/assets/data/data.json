@@ -11,7 +11,7 @@
     "experiences":
     [
         {
-            "id":2,
+            "id":1,
             "job": "jobexp",
             "company": "comexp",
             "startDate": "expdate",
@@ -19,16 +19,24 @@
             "description": "expdesc"
         },
         {
-            "id":3,
+            "id":2,
             "job": "jobexp2",
             "company": "comexp2",
             "startDate": "expdate2",
             "endDate": "expdateend2",
             "description": "expdesc2"
+        },
+        {
+            "id":3,
+            "job": "jobexp3",
+            "company": "comexp3",
+            "startDate": "expdate3",
+            "endDate": "expdateend3",
+            "description": "expdesc3"
         }
     ],
 
-    "studies":
+    "educations":
     [
         {
             "id": 4,
@@ -80,6 +88,10 @@
         {
             "id":7,
             "softSkill": "soft2"
+        },
+        {
+            "id":6,
+            "softSkill": "soft3"
         }
     ],
     "projects":
@@ -99,16 +111,16 @@
             "url": "url2"
         }
     ],
-    "social-media":
+    "socialMedia":
     [
         {
             "id":10,
-            "url": "socurl",
+            "url": "socialmedia.com/",
             "type": "Linkedin"
         },
         {
             "id":11,
-            "url": "socurl2",
+            "url": "socialmedia.com/",
             "type": "Github"
         }
     ],
@@ -117,8 +129,8 @@
         {
             "id":12,
             "fullname": "Carolina Ángeles",
-            "professional-profile": "Desarrolladora Web Full-Stack Jr.",
-            "profile-picture":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_16.jpg",
+            "professionalProfile": "Desarrolladora Web Full-Stack Jr.",
+            "profilePicture":"https://64.media.tumblr.com/8c4f60b89afc2d206ec9fef93558e985/94356f32c2506702-ba/s500x750/3809cb778e4e8cf867f1e6bb233b98e9fc1f98aa.jpg",
             "banner":"https://images.contentstack.io/v3/assets/blt187521ff0727be24/bltc6e788b11a9c8245/60ee0f71a86d0f5a0be449a3/MissFortune_0.jpg"
         }
     ]

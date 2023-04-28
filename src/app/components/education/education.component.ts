@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { usersService } from 'src/app/services/users.service';
+import { EducationAddModalComponent } from 'src/app/modals/add/education-add-modal/education-add-modal.component';
 
 @Component({
   selector: 'app-education',
@@ -9,37 +10,33 @@ import { usersService } from 'src/app/services/users.service';
 export class EducationComponent implements OnInit { 
 
   dataPortfolio:any;
-  title:string='';
-  institution:string='';
-  startDate:string='';
-  endDate:string='';
-  url:string='';
-
+  educations:any=[];
 
   constructor(private portfolioService: usersService){}
 
-
   ngOnInit(): void {
-    this.portfolioService.getData().subscribe(data =>{
-      console.log(data);
-      this.title=data.title;
-      this.institution=data.institution;
-      this.startDate=data.startDate;
-      this.endDate=data.endDate;
-      this.url=this.url;
+    this.getEducations();
+    this.portfolioService.output.subscribe(data =>{
+      console.log('Recibiendo: ',data);
+      // this.educationDataEdited.push(data);
     })
   }
 
+  getEducations(){
+    this.portfolioService.getData()
+    .subscribe(res =>{
+      this.educations= res;
+    });
+  }
 
+  deleteEducation(education: any){
+    this.portfolioService.deleteData(education.id)
+    .subscribe(res =>{
+      alert("Eliminado.");
+      this.getEducations();
+    });
+  }
 
-  /*
-  id:number = 0;
-  title:string = '';
-  institution:string = '';
-  startDate:string = '';
-  endDate:string = '';
-  url:string = '';
-*/
 }
 
 

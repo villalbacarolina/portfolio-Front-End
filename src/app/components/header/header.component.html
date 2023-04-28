@@ -1,11 +1,11 @@
-<header class="banner">
+<header class="banner" *ngFor="let h of header">
 
-  <div class="container-fluid text-center">
+  <div class="container-fluid text-center" >
     <div id="profile-pic">
       
       <div class="profile-pic">
         <img 
-             src="https://64.media.tumblr.com/8c4f60b89afc2d206ec9fef93558e985/94356f32c2506702-ba/s500x750/3809cb778e4e8cf867f1e6bb233b98e9fc1f98aa.jpg" 
+             [src]="h.profilePicture" 
              alt="profile picture"/> <!--rellenar dato-->
       </div>
     </div>
@@ -14,8 +14,8 @@
       <app-social-media-add-modal></app-social-media-add-modal>
       <app-social-media-delete-modal></app-social-media-delete-modal>
       
-      <h1>MISS FORTUNE</h1>  <!--rellenar dato-->
-      <h2>Desarrolladora Web Full-Stack Jr.</h2>  <!--rellenar dato-->
+      <h1>{{h.fullname}}</h1>  <!--rellenar dato-->
+      <h2>{{h.professionalProfile}}</h2>  <!--rellenar dato-->
     </div>
   </div>
   <div class="wave">

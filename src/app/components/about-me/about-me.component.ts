@@ -6,13 +6,16 @@ import { usersService } from 'src/app/services/users.service';
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.css']
 })
-export class AboutMeComponent implements OnInit {
-  aboutMe:any;
-  constructor(private aboutMeData: usersService){}
+export class AboutMeComponent implements OnInit { 
+
+  aboutMe:any=[];
+
+  constructor(private portfolioService: usersService){}
 
   ngOnInit(): void {
-    this.aboutMeData.getData().subscribe(data =>{
-      this.aboutMe = data.aboutMe;
+    this.portfolioService.getData().subscribe(data =>{
+      console.log(data);
+      this.aboutMe=data.about; 
     })
   }
 }

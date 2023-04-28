@@ -1,10 +1,11 @@
+<!--arreglar importe de datos al svg-->
 <article>
     <div class="title-add-hard">
         <h3>HARD SKILLS</h3> <app-hard-skills-add-modal></app-hard-skills-add-modal> <!--arreglar posicion-->
     </div> 
     <div class="hard-skills">
 
-        <div class="hard-skill" *ngFor="let hard of hardSkills">
+        <div class="hard-skill" *ngFor="let hardSkill of hardSkills">
             <div class="buttons">
                 <app-hard-skill-edit-modal></app-hard-skill-edit-modal>
                 <app-delete-modal></app-delete-modal> <!--arreglar posicion-->
@@ -28,8 +29,8 @@
                     id="svg_1"
                 />
             </svg> <!--rellenar dato-->
-            <h4>{{hard.name}}</h4> <!--rellenar dato-->
-            <p>{{hard.level}}</p> <!--rellenar dato-->
+            <h4>{{hardSkill.name}}</h4> <!--rellenar dato-->
+            <p>{{hardSkill.level}}</p> <!--rellenar dato-->
         </div>
         
     </div>

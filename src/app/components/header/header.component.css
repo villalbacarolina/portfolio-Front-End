@@ -1,9 +1,10 @@
 /********Waves*********/
 
 .banner {
-  /*rellenar dato*/
-    background: linear-gradient(rgba(250, 67, 71, 0.8), rgba(250, 67, 71, 1)),
+    background-color: #fa4347;
+    /*background: linear-gradient(rgba(250, 67, 71, 0.8), rgba(250, 67, 71, 1)),
       url('https://images.contentstack.io/v3/assets/blt187521ff0727be24/bltc6e788b11a9c8245/60ee0f71a86d0f5a0be449a3/MissFortune_0.jpg');
+    */
     height: max-content;
     background-size: cover;
     background-position: center;

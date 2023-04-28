@@ -13,8 +13,8 @@
         <!--opened menu-->
         <div class="collapse navbar-collapse" id="menu">
             <!--recorrer-->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-link">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
+                <li class="nav-link" *ngFor="let platform of socialMedia"> <!--ngIf-->
                     <a href="#"> <!-- rellenar dato-->
                         <img src="../../assets/svg/github.svg" 
                         alt="Linkedin icon" height="40" width="40" /> <!--mejorar tamanio-->
