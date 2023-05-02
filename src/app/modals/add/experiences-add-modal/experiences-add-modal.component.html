@@ -14,32 +14,29 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          
-            <form action="">
+          <!-- <form [formGroup]="formValue"> -->
                 <label>Puesto</label><br>
-                <input type="text" name="job" value="" size="40" maxlength="40" >
-            </form>
-            <form action="">
+                <input type="text" name="jobExp" value="" size="40" maxlength="40" >
                 <label>Empresa</label><br>
-                <input type="text" name="company" value="" size="40" maxlength="40">
-            </form>
+                <input type="text" name="companyExp" value="" size="40" maxlength="40">
+            
             <label>Fecha de inicio</label>
             <br>
-            <input type="date" name="startDate" min="2010-01-01">
+            <input type="date" name="startDateExp" min="2010-01-01">
             <br>
             <label>Fecha de fin</label>
             <br>
-            <input type="date" name="endDate" min="2010-01-01"> <!--opcional, hacerlos opcionales-->
+            <input type="date" name="endDateExp" min="2010-01-01"> <!--opcional, hacerlos opcionales-->
             <br>
             Breve descripción:
             <textarea name="comentario" rows="5" cols="50" maxlength="250"></textarea>
             <br>
-            <input type="submit" onclick="alert('Enviado')">
-
+          <!-- </form> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Añadir</button>
+        <button type="button"  class="btn btn-primary">Añadir</button>  <!--(click)="postExperience()" -->
       </div>
     </div>
+    
   </div>

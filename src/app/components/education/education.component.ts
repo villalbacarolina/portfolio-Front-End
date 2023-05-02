@@ -1,16 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { usersService } from 'src/app/services/users.service';
-import { EducationAddModalComponent } from 'src/app/modals/add/education-add-modal/education-add-modal.component';
+import { Education } from 'src/app/model/education';
+import { EducationService } from 'src/app/services/education.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit { 
+export class EducationComponent implements OnInit{
+  educations: Education[]=[];
+
+  constructor(private sEducation: EducationService){}
+
+  ngOnInit(): void {
+    this.getEducations()
+  }
+
+  getEducations():void{
+    this.sEducation.allEducations().subscribe(data => {this.educations=data});
+  }
+
+
+
+
+
+  /*implements OnInit { 
 
   dataPortfolio:any;
   educations:any=[];
+  logged:boolean=false;
 
   constructor(private portfolioService: usersService){}
 
@@ -20,6 +38,16 @@ export class EducationComponent implements OnInit {
       console.log('Recibiendo: ',data);
       // this.educationDataEdited.push(data);
     })
+  }
+
+  logIn(): boolean {
+    this.logged = true;
+    return this.logged;
+  }
+
+  logOut(): boolean {
+    this.logged = false;
+    return this.logged;
   }
 
   getEducations(){
@@ -36,7 +64,7 @@ export class EducationComponent implements OnInit {
       this.getEducations();
     });
   }
-
+*/
 }
 
 

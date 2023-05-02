@@ -12,14 +12,13 @@ export class EducationAddModalComponent implements OnInit{
   formValue !: FormGroup;
   educationModel: EducationModelComponent = new EducationModelComponent();
   educationsData !:any;
- 
 
   constructor(private fb: FormBuilder,
     private uS: usersService){} 
 
   ngOnInit(): void {
     this.formValue = this.fb.group({
-      title:[''],
+      titleEd:[''],
       institution:[''],
       startDate:[''],
       endDate:[''],
@@ -29,7 +28,7 @@ export class EducationAddModalComponent implements OnInit{
 
   postEducation(){
     this.educationModel.id = this.formValue.value.id;
-    this.educationModel.titleEd = this.formValue.value.title;
+    this.educationModel.titleEd = this.formValue.value.titleEd;
     this.educationModel.institution = this.formValue.value.institution;
     this.educationModel.startDate = this.formValue.value.startDate;
     this.educationModel.endDate = this.formValue.value.endDate;

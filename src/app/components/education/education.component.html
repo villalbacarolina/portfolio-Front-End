@@ -1,15 +1,16 @@
 <section>
     <article>
-        <h3>ESTUDIOS</h3> <app-education-add-modal></app-education-add-modal>
+        <h3>ESTUDIOS</h3> <app-education-add-modal *ngIf="logged"></app-education-add-modal>
         <ul id="title" *ngFor="let education of educations"> 
             <li>
+             <!-- json ya no toma mi titulo -->
                 <a [href]="education.url" *ngIf="education.url" target="_blank"><h4>{{education.titleEd}}</h4></a>
                 <h4 *ngIf="!education.url">{{education.titleEd}}</h4>
-                <p>{{education.institution}}  |  {{education.startDate}} </p> <p *ngIf="education.endDate">- {{education.endDate}}</p>
+                <p>{{education.institution}}</p>  <p *ngIf="education.endDate"> | {{education.startDate}}</p>  <p *ngIf="education.endDate">- {{education.endDate}}</p>
                 <div class="buttons">
                     <!-- https://www.youtube.com/watch?v=I9mtyLg32nQ -->
                     <!-- <button type="button" class="btn btn-primary" (click)="editEducation(education)">Edit</button> -->
-                    <button type="button" class="btn btn-primary" (click)="deleteEducation(education)">Borrar</button>
+                    <button type="button" *ngIf="logged" (click)="deleteEducation(education)" class="btn btn-primary" >Borrar</button>
                 </div>
             </li>
         </ul>

@@ -1,37 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { usersService } from 'src/app/services/users.service';
+// import { ExperiencesModelComponent } from './experiences-modal-model.component';
 
 @Component({
   selector: 'app-experiences-add-modal',
   templateUrl: './experiences-add-modal.component.html',
   styleUrls: ['./experiences-add-modal.component.css']
 })
-export class ExperiencesAddModalComponent {/*implements OnInit{
+export class ExperiencesAddModalComponent { /*implements OnInit{
   formValue !: FormGroup;
-  education: EducationComponent = new EducationComponent();
-  educations !:any;
+  experienceModel: ExperiencesModelComponent = new ExperiencesModelComponent();
+  experiencesData !:any;
 
   constructor(private fb: FormBuilder,
     private uS: usersService){} 
 
   ngOnInit(): void {
     this.formValue = this.fb.group({
-      title:[''],
-      institution:[''],
-      startDate:[''],
-      endDate:[''],
-      url:['']
+      jobExp:[''],
+      companyExp:[''],
+      startDateExp:[''],
+      endDateExp:[''],
+      descriptionExp:['']
     })
-    this.getEducations();
   }
 
-  postEducation(){
-    this.education.title = this.formValue.value.title;
-    this.education.institution = this.formValue.value.institution;
-    this.education.startDate = this.formValue.value.startDate;
-    this.education.endDate = this.formValue.value.endDate;
-    this.education.url = this.formValue.value.url;
+  postExperience(){
+    this.experienceModel.idExp = this.formValue.value.idExp;
+    this.experienceModel.jobExp = this.formValue.value.jobExp;
+    this.experienceModel.companyExp = this.formValue.value.companyExp;
+    this.experienceModel.startDateExp = this.formValue.value.startDateExp;
+    this.experienceModel.endDateExp = this.formValue.value.endDateExp;
+    this.experienceModel.descriptionExp = this.formValue.value.descriptionExp;
 
-    this.uS.postData(this.education)
+    this.uS.postData(this.experienceModel)
     .subscribe(
       {
       next: resp => {
@@ -46,14 +49,15 @@ export class ExperiencesAddModalComponent {/*implements OnInit{
         alert("Error.");
       }
       });
-    }
+  }
 
-  getEducations(){
-    this.uS.getData()
-    .subscribe(res =>{
-      this.educations = res;
-      });
+
+  editExperience(experience: any){
+    this.formValue.controls['jobExp'].setValue(experience.jobExp);
+    this.formValue.controls['companyExp'].setValue(experience.companyExp);
+    this.formValue.controls['startDateExp'].setValue(experience.endDateExp);
+    this.formValue.controls['descriptionExp'].setValue(experience.descriptionExp);
+    // https://www.youtube.com/watch?v=I9mtyLg32nQ
   }
 */
-
 }
