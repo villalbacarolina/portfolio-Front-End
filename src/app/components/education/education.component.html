@@ -9,7 +9,7 @@
                 <p>{{education.institution}}</p>  <p *ngIf="education.endDate"> | {{education.startDate}}</p>  <p *ngIf="education.endDate">- {{education.endDate}}</p>
                 <div class="buttons">
                     <!-- https://www.youtube.com/watch?v=I9mtyLg32nQ -->
-                    <!-- <button type="button" class="btn btn-primary" (click)="editEducation(education)">Edit</button> -->
+                    <!-- <button type="button" class="btn btn-primary" (click)="editEducation(education)">Edit</button>  -->
                     <button type="button" *ngIf="logged" (click)="deleteEducation(education)" class="btn btn-primary" >Borrar</button>
                 </div>
             </li>

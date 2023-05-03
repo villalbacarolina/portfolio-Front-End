@@ -1,34 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Education } from 'src/app/model/education';
-import { EducationService } from 'src/app/services/education.service';
+import { usersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit{
-  educations: Education[]=[];
-
-  constructor(private sEducation: EducationService){}
-
-  ngOnInit(): void {
-    this.getEducations()
-  }
-
-  getEducations():void{
-    this.sEducation.allEducations().subscribe(data => {this.educations=data});
-  }
-
-
-
-
-
-  /*implements OnInit { 
+export class EducationComponent implements OnInit { 
 
   dataPortfolio:any;
   educations:any=[];
-  logged:boolean=false;
+  logged:boolean=true;
 
   constructor(private portfolioService: usersService){}
 
@@ -64,7 +46,7 @@ export class EducationComponent implements OnInit{
       this.getEducations();
     });
   }
-*/
+
 }
 
 

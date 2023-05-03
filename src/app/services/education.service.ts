@@ -8,7 +8,7 @@ import { Education } from '../model/education';
 })
 export class EducationService {
   // despues haces todo igual en los otros
-  url='local:host/8080/education/'
+  url='localhost:8080/education/'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,11 +17,11 @@ export class EducationService {
   }
 
   // public userEducations(id: number): Observable<Education[]>{
-  //   return this.httpClient.get<Education[]>(this.url + 'usuario/${id}/estudios');
+  //   return this.httpClient.get<Education[]>(this.url + `usuario/${id}/estudios`);
   // }
 
   public userEducation(id: number): Observable<Education>{
-    return this.httpClient.get<Education>(this.url + 'detalles/${id}');
+    return this.httpClient.get<Education>(this.url + `detalles/${id}`); 
   }
 
   public addEducation(education: Education): Observable<any>{
@@ -37,7 +37,7 @@ export class EducationService {
   // }
 
   public deleteEducation(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.url + 'eliminar/${id}');
+    return this.httpClient.delete<any>(this.url + `eliminar/${id}`);
   }
 
 }
