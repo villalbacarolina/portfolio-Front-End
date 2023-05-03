@@ -16,10 +16,6 @@ export class EducationService {
     return this.httpClient.get<Education[]>(this.url + 'lista');
   }
 
-  // public userEducations(id: number): Observable<Education[]>{
-  //   return this.httpClient.get<Education[]>(this.url + `usuario/${id}/estudios`);
-  // }
-
   public userEducation(id: number): Observable<Education>{
     return this.httpClient.get<Education>(this.url + `detalles/${id}`); 
   }

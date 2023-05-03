@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { usersService } from 'src/app/services/users.service';
-import { EducationModelComponent } from './education-add-modal-model.component';
+import { Education } from 'src/app/model/education';
 
 @Component({
   selector: 'app-education-add-modal',
@@ -10,7 +10,7 @@ import { EducationModelComponent } from './education-add-modal-model.component';
 })
 export class EducationAddModalComponent implements OnInit{
   formValue !: FormGroup;
-  educationModel: EducationModelComponent = new EducationModelComponent();
+  educationModel: Education = new Education();
   educationsData !:any;
 
   constructor(private fb: FormBuilder,
@@ -59,6 +59,7 @@ export class EducationAddModalComponent implements OnInit{
     this.formValue.controls['url'].setValue(education.url);
     //https://www.youtube.com/watch?v=I9mtyLg32nQ
   }
+  
   
 }
 

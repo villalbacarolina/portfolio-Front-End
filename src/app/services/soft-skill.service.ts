@@ -1,15 +1,12 @@
-//conecta back con front y operaciones
-import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+export class SoftSkillService {
 
-export class usersService {
   @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
