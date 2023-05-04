@@ -1,20 +1,17 @@
-//conecta back con front y operaciones
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
 
-export class usersService {
+export class ExperienceService {
+
   @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
-
-  //routernavegate para datos, el id (?)
 
   getData(): Observable<any> {
     return this.http.get('http://localhost:3000/posts')
@@ -40,5 +37,4 @@ export class usersService {
       return res;
     }))
   }
-  
 }
