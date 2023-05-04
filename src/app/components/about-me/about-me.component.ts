@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EducationService } from 'src/app/services/education.service';
 import { usersService } from 'src/app/services/users.service';
 
 @Component({
@@ -6,16 +7,7 @@ import { usersService } from 'src/app/services/users.service';
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.css']
 })
-export class AboutMeComponent implements OnInit { 
-
+export class AboutMeComponent{
   aboutMe:any=[];
-
-  constructor(private portfolioService: usersService){}
-
-  ngOnInit(): void {
-    this.portfolioService.getData().subscribe(data =>{
-      console.log(data);
-      this.aboutMe=data.about; 
-    })
-  }
+  
 }

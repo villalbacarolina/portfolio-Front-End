@@ -6,14 +6,6 @@ import { usersService } from 'src/app/services/users.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
   projects:any=[];
-  constructor(private projectsData: usersService){}
-
-  ngOnInit(): void {
-    this.projectsData.getData().subscribe(data =>{
-      this.projects = data.projects;
-    })
-  }
-
 }

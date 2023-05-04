@@ -6,18 +6,6 @@ import { usersService } from 'src/app/services/users.service';
   templateUrl: './hard-skills.component.html',
   styleUrls: ['./hard-skills.component.css']
 })
-export class HardSkillsComponent implements OnInit { 
-
+export class HardSkillsComponent {
   hardSkills:any=[];
-
-
-  constructor(private portfolioService: usersService){}
-
-  ngOnInit(): void {
-    this.portfolioService.getData().subscribe(data =>{
-      console.log(data);
-      this.hardSkills=data.hardSkills;
-    })
-  }
-
 }

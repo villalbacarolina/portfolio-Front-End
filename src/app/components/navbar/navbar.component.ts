@@ -6,17 +6,6 @@ import { usersService } from 'src/app/services/users.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit { 
+export class NavbarComponent {
   socialMedia:any=[];
-
-  constructor(private portfolioService: usersService){}
-
-
-  ngOnInit(): void {
-    this.portfolioService.getData().subscribe(data =>{
-      console.log(data);
-      this.socialMedia=data.socialMedia;
-    })
-  }
-
 }

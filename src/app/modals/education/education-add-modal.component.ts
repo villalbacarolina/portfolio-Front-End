@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { usersService } from 'src/app/services/users.service';
 import { Education } from 'src/app/model/education';
+import { EducationService } from 'src/app/services/education.service';
 
 @Component({
   selector: 'app-education-add-modal',
@@ -11,10 +11,9 @@ import { Education } from 'src/app/model/education';
 export class EducationAddModalComponent implements OnInit{
   formValue !: FormGroup;
   educationModel: Education = new Education();
-  educationsData !:any;
 
   constructor(private fb: FormBuilder,
-    private uS: usersService){} 
+    private edServ: EducationService){} 
 
   ngOnInit(): void {
     this.formValue = this.fb.group({
@@ -34,7 +33,7 @@ export class EducationAddModalComponent implements OnInit{
     this.educationModel.endDate = this.formValue.value.endDate;
     this.educationModel.url = this.formValue.value.url;
 
-    this.uS.postData(this.educationModel)
+    this.edServ.postData(this.educationModel)
     .subscribe(
       {
       next: resp => {

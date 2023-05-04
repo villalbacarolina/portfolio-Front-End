@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { usersService } from './services/users.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EducationService } from './services/education.service';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
@@ -21,7 +21,6 @@ import { IndexComponent } from './components/index/index.component';
 import { HardSkillsComponent } from './components/skills/hard-skills/hard-skills.component';
 import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
 import { EducationAddModalComponent } from './modals/education/education-add-modal.component';
-
 
 @NgModule({
   declarations: [
@@ -48,7 +47,7 @@ import { EducationAddModalComponent } from './modals/education/education-add-mod
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [usersService],
+  providers: [EducationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
