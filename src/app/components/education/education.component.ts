@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EducationAddModalComponent } from 'src/app/modals/add/education-add-modal/education-add-modal.component';
 import { usersService } from 'src/app/services/users.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Education } from 'src/app/model/education';
 
 @Component({
   selector: 'app-education',
@@ -8,31 +9,26 @@ import { usersService } from 'src/app/services/users.service';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent implements OnInit { 
-
-  dataPortfolio:any;
+  formValue !: FormGroup;
+  educationModel: Education = new Education();
   educations:any=[];
   logged:boolean=true;
 
-  constructor(private portfolioService: usersService){}
+  constructor(private portfolioService: usersService, private fb: FormBuilder){}
 
   ngOnInit(): void {
+    this.formValue = this.fb.group({
+    titleEd:[''],
+    institution:[''],
+    startDate:[''],
+    endDate:[''],
+    url:['']
+      })
     this.getEducations();
     this.portfolioService.output.subscribe(data =>{
       console.log('Recibiendo: ',data);
-      // this.educationDataEdited.push(data);
     })
   }
-
-  /*
-  logIn(): boolean {
-    this.logged = true;
-    return this.logged;
-  }
-
-  logOut(): boolean {
-    this.logged = false;
-    return this.logged;
-  }*/
 
   getEducations(){
     this.portfolioService.getData()
@@ -49,38 +45,42 @@ export class EducationComponent implements OnInit {
     });
   }
 
-  /*
-  openEditEducation(education: any){
-    this.dialog.open(EducationAddModalComponent, {
-      width:'45%',
-      data:education,
-    }).afterClosed().subscribe(val=>{
-    if(val='guardar'){
-      this.getEducations();
-    }
-    });
+  onEdit(education: any){
+    this.educationModel.id = education.id;
+    this.formValue.controls['titleEd'].setValue(education.titleEd);
+    this.formValue.controls['institution'].setValue(education.institution);
+    this.formValue.controls['startDate'].setValue(education.startDate);
+    this.formValue.controls['endDate'].setValue(education.endDate);
+    this.formValue.controls['url'].setValue(education.url);
   }
 
+  updateEducation(){
+    this.educationModel.titleEd = this.formValue.value.titleEd;
+    this.educationModel.institution = this.formValue.value.institution;
+    this.educationModel.url = this.formValue.value.url;
+    this.educationModel.startDate = this.formValue.value.startDate;
+    this.educationModel.endDate = this.formValue.value.endDate;
 
-  <button  mat-icon-button color="primary" (click)="openEditEducacion(educacion)" type="button"  data-toggle="modal" data-target="#myModal"><mat-icon>create</mat-icon></button>
+    this.portfolioService.putData(this.educationModel, this.educationModel.id)
+    .subscribe(res => {
+      alert("Editado correctamente.")
+      let ref= document.getElementById('cancel');
+      ref?.click();
+      this.formValue.reset();
+      this.getEducations;
+    })
+  }
   
-     openEditEducacion(educacion: any){​​
-    this.dialog.open(EducacionFormComponent, {​​
-      width:'45%',
-      data:educacion,
-  }​​).afterClosed().subscribe(val=>{​​
-    if(val='guardar'){​​
-      this.listarEducacion();
-    }​​
-  }​​);
-}​​
-  public listarEducacion(): void {​​
-    this.serviceEducacion.getAllEducacion()
-    .subscribe(
-      data=>this.educaciones=data
-    )}​​
-*/
-  
+  /*
+  logIn(): boolean {
+    this.logged = true;
+    return this.logged;
+  }
+
+  logOut(): boolean {
+    this.logged = false;
+    return this.logged;
+  }*/
 
 }
 

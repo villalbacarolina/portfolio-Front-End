@@ -2,19 +2,64 @@
     <article>
         <h3>ESTUDIOS</h3> <app-education-add-modal *ngIf="logged"></app-education-add-modal>
         <ul id="title" *ngFor="let education of educations"> 
+
             <li>
-             <!-- json ya no toma mi titulo -->
                 <a [href]="education.url" *ngIf="education.url" target="_blank"><h4>{{education.titleEd}}</h4></a>
                 <h4 *ngIf="!education.url">{{education.titleEd}}</h4>
-                <p>{{education.institution}}</p>  <p *ngIf="education.endDate"> | {{education.startDate}}</p>  <p *ngIf="education.endDate">- {{education.endDate}}</p>
+                <p>{{education.institution}}</p>  
+                <p *ngIf="education.startDate"> | {{education.startDate}}</p>  
+                <p *ngIf="education.endDate && education.startDate"> - {{education.endDate}}</p>
                 <div class="buttons">
-                    <!-- https://www.youtube.com/watch?v=I9mtyLg32nQ -->
-                    <!-- <button type="button" class="btn btn-primary" (click)="editEducation(education)">Edit</button>  --> 
-                    <!-- data-bs-target="#education" -->
-                    <!-- <button  mat-icon-button color="primary" (click)="openEditEducation(education)" type="button"  data-toggle="modal" data-target="#myModal">Editar</button> -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="onEdit(education)" data-bs-target="#education-edit" >Editar</button>
                     <button type="button" *ngIf="logged" (click)="deleteEducation(education)" class="btn btn-primary" >Borrar</button>
                 </div>
             </li>
+
         </ul>
     </article>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="education-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar estudio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+              <div>
+                <label>Título:</label><br>
+                <input type="text" formControlName="titleEd" maxlength="40" >
+              </div>
+              <div>
+                <label>Institución:</label><br>
+                <input type="text" formControlName="institution" maxlength="40">
+              </div>
+              <div>
+                <label>Fecha de inicio:</label>
+                <br>
+                <input type="date" formControlName="startDate" min="2010-01-01" max="2023-07-31">
+              </div>
+              <div>
+                <label>Fecha de fin (opcional):</label>
+                <br>
+                <input type="date" formControlName="endDate" min="2010-01-01" max="2023-07-31"> <!--opcional, hacerlos opcionales-->
+              </div>
+              <div>
+                <label>URL del certificado (opcional):</label><br>
+                <input type="text" formControlName="url">
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button"  class="btn btn-primary" (click)="updateEducation()">Editar</button>
+      </div>
+    </div>
+  </div>
+  
+
+  

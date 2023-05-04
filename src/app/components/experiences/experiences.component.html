@@ -4,16 +4,13 @@
       
             <div class="title-add">
                 <h3>EXPERIENCIA</h3>
-                <app-experiences-add-modal></app-experiences-add-modal>
             </div> 
       
             <div class="row align-items-start"> 
                 <div class="col-9" id="experience" *ngFor="let experience of experiences">
                     <!--agregar espacio entre botones-->
                     <div class="article-buttons">
-                        <h4>{{experience.job}}</h4> 
-                        <app-experiences-edit-modal></app-experiences-edit-modal>
-                        <app-delete-modal></app-delete-modal>
+                        <h4>{{experience.job}}</h4>
                     </div>
                     <h5>{{experience.company}}</h5>  
                     <h5>{{experience.startDate}} - {{experience.endDate}}</h5>

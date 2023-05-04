@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { usersService } from 'src/app/services/users.service';
 import { Education } from 'src/app/model/education';
@@ -49,15 +49,6 @@ export class EducationAddModalComponent implements OnInit{
         alert("Error.");
       }
       });
-  }
-
-  editEducation(education: any){
-    this.formValue.controls['titleEd'].setValue(education.titleEd);
-    this.formValue.controls['institution'].setValue(education.institution);
-    this.formValue.controls['startDate'].setValue(education.startDate);
-    this.formValue.controls['endDate'].setValue(education.endDate);
-    this.formValue.controls['url'].setValue(education.url);
-    //https://www.youtube.com/watch?v=I9mtyLg32nQ
   }
   
   
