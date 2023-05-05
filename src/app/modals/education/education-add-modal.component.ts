@@ -34,19 +34,11 @@ export class EducationAddModalComponent implements OnInit{
     this.educationModel.url = this.formValue.value.url;
 
     this.edServ.postData(this.educationModel)
-    .subscribe(
-      {
-      next: resp => {
-        console.log(resp);
-        alert("Añadido exitosamente.");
-        let ref= document.getElementById('cancel');
-        ref?.click();
-        this.formValue.reset();
-      },
-      error: err => {
-        console.log(err.error.msg);
+    .subscribe( res=>{
+      console.log(res);
+      alert("Estudio añadido correctamente.")
+      },err=>{
         alert("Error.");
-      }
       });
   }
   

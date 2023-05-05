@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class SoftSkillService {
-
+/*
   @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
@@ -36,5 +36,5 @@ export class SoftSkillService {
     .pipe(map( (res:any)=>{
       return res;
     }))
-  }
+  }*/
 }

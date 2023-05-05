@@ -46,6 +46,7 @@ export class EducationComponent implements OnInit {
       this.getEducations();
     });
   }
+  
 
   onEdit(education: any){
     this.educationModel.id = education.id;

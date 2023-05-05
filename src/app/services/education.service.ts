@@ -2,6 +2,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Education } from '../model/education';
 
 @Injectable({
   providedIn: 'root'
@@ -14,29 +15,38 @@ export class EducationService {
   constructor(private http: HttpClient){}
 
   getData(): Observable<any> {
-    return this.http.get('http://localhost:3000/posts')
+    return this.http.get(`http://localhost:8080/estudios`) 
   }
 
   postData(data : any){
-    return this.http.post<any>('http://localhost:3000/posts', data)
+    return this.http.post<any>(`http://localhost:8080/estudio/agregar`, data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
 
   putData(data:any, id:number){ 
-    return this.http.put<any>('http://localhost:3000/posts/'+id, data)
+    return this.http.put<any>(`http://localhost:8080/estudio/editar/`+id, data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
 
+  
   deleteData(id:number){ 
-    return this.http.delete<any>('http://localhost:3000/posts/'+id)
+    return this.http.delete<any>(`http://localhost:8080/estudio/eliminar/`+id)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
+
+/*
+  deleteData(education: Education):Observable<Education>{
+    const url = `http://localhost:8080/estudio/eliminar/${education.id}`
+    return this.http.delete<Education>(url);
+  }
+  */
+
 }
   /*
   // despues haces todo igual en los otros
@@ -44,7 +54,7 @@ export class EducationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public allEducations(): Observable<Education[]>{
+  public getData(): Observable<Education[]>{
     return this.httpClient.get<Education[]>(this.url + 'lista');
   }
 
@@ -52,7 +62,7 @@ export class EducationService {
     return this.httpClient.get<Education>(this.url + `detalles/${id}`); 
   }
 
-  public addEducation(education: Education): Observable<any>{
+  public postData(education: Education): Observable<any>{
     return this.httpClient.post<any>(this.url + 'agregar', education);
   }
 
