@@ -33,8 +33,7 @@ export class EducationComponent implements OnInit {
   }
 
   getEducations(){
-    this.edServ.getData()
-    .subscribe(res =>{
+    this.edServ.getData().subscribe(res =>{
       this.educations= res;
     });
   }

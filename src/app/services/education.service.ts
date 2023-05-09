@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Education } from '../model/education';
+import { environment } from 'environments/environments.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,25 @@ import { Education } from '../model/education';
 
 export class EducationService {
 
+  url:string = environment.apiURL;
+  
   @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
 
-  getData(): Observable<any> {
-    return this.http.get(`http://localhost:8080/estudios`) 
+  public getData(): Observable<Education[]>{
+    return this.http.get<Education[]>(this.url + "estudios");
   }
 
   postData(data : any){
-    return this.http.post<any>(`http://localhost:8080/estudio/agregar`, data)
+    return this.http.post<any>(this.url + "estudio/agregar", data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
 
   putData(data:any, id:number){ 
-    return this.http.put<any>(`http://localhost:8080/estudio/editar/`+id, data)
+    return this.http.put<any>(this.url + "estudio/editar/"+id, data)
     .pipe(map( (res:any)=>{
       return res;
     }))
@@ -34,7 +37,7 @@ export class EducationService {
 
   
   deleteData(id:number){ 
-    return this.http.delete<any>(`http://localhost:8080/estudio/eliminar/`+id)
+    return this.http.delete<any>(this.url + 'estudio/eliminar/'+id)
     .pipe(map( (res:any)=>{
       return res;
     }))

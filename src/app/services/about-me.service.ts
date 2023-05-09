@@ -2,6 +2,8 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'environments/environments.prod';
+import { AboutMe } from '../model/about-me';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +11,29 @@ import { map } from 'rxjs/operators';
 
 export class AboutMeService {
 
+  url:string = environment.apiURL;
+  
   @Output() output: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient){}
 
-  getData(): Observable<any> {
-    return this.http.get('http://localhost:3000/posts')
+  public getData(): Observable<AboutMe[]>{
+    return this.http.get<AboutMe[]>(this.url + "acerca-de-mi");
   }
 
-  putData(data:any, id:number){ 
-    return this.http.put<any>('http://localhost:3000/posts/'+id, data)
+  postData(data : any){
+    return this.http.post<any>(this.url + "acerca-de-mi/agregar", data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
+
+  putData(data:any, id:number){ 
+    return this.http.put<any>(this.url + "acerca-de-mi/editar/"+id, data)
+    .pipe(map( (res:any)=>{
+      return res;
+    }))
+  }
+
   
 }
