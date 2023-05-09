@@ -4,8 +4,8 @@
         <ul id="title" *ngFor="let education of educations"> 
 
             <li>
-                <a [href]="education.url" *ngIf="education.url" target="_blank"><h4>{{education.titleEd}}</h4></a>
-                <h4 *ngIf="!education.url">{{education.titleEd}}</h4>
+                <a [href]="education.url" *ngIf="education.url" target="_blank"><h4>{{education.title}}</h4></a>
+                <h4 *ngIf="!education.url">{{education.title}}</h4>
                 <p>{{education.institution}}</p>  
                 <p *ngIf="education.startDate"> | {{education.startDate}}</p>  
                 <p *ngIf="education.endDate && education.startDate"> - {{education.endDate}}</p>

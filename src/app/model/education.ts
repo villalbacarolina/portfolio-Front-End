@@ -1,6 +1,6 @@
 export class Education{
     id: number=0;
-    titleEd:string='';
+    title:string='';
     institution:string='';
     startDate:string='';
     endDate:string='';
