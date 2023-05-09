@@ -28,8 +28,8 @@ export class EducationService {
     }))
   }
 
-  putData(data:any, id:number){ 
-    return this.http.put<any>(this.url + "estudio/editar/"+id, data)
+  putData(data:any){ 
+    return this.http.put<any>(this.url + "estudio/editar", data)
     .pipe(map( (res:any)=>{
       return res;
     }))

@@ -20,7 +20,7 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.fb.group({
-    titleEd:[''],
+    title:[''],
     institution:[''],
     startDate:[''],
     endDate:[''],
@@ -49,7 +49,7 @@ export class EducationComponent implements OnInit {
 
   onEdit(education: any){
     this.educationModel.id = education.id;
-    this.formValue.controls['titleEd'].setValue(education.titleEd);
+    this.formValue.controls['title'].setValue(education.title);
     this.formValue.controls['institution'].setValue(education.institution);
     this.formValue.controls['startDate'].setValue(education.startDate);
     this.formValue.controls['endDate'].setValue(education.endDate);
@@ -57,7 +57,7 @@ export class EducationComponent implements OnInit {
   }
 
   updateEducation(){
-    this.educationModel.titleEd = this.formValue.value.titleEd;
+    this.educationModel.title = this.formValue.value.title;
     this.educationModel.institution = this.formValue.value.institution;
     this.educationModel.url = this.formValue.value.url;
     this.educationModel.startDate = this.formValue.value.startDate;
