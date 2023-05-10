@@ -1,0 +1,49 @@
+
+<!--editar disenio. fijate que los tamanios coinicidan con los de tu base de datos-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#experience-add">
+    Añadir
+</button>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="experience-add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Añadir experiencia</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+              <div>
+                <label>Empleo:</label><br>
+                <input type="text" formControlName="job" maxlength="40" >
+              </div>
+              <div>
+                <label>Empresa:</label><br>
+                <input type="text" formControlName="company" maxlength="40">
+              </div>
+              <div>
+                <label>Fecha de inicio:</label>
+                <br>
+                <input type="date" formControlName="startDate" min="2010-01-01" max="2023-07-31">
+              </div>
+              <div>
+                <label>Fecha de fin (opcional):</label>
+                <br>
+                <input type="date" formControlName="endDate" min="2010-01-01" max="2023-07-31">
+              </div>
+              <div>
+                <label>Descripción:</label><br>
+                <input type="text" formControlName="description">
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" (click)="postExperience()" class="btn btn-primary">Añadir</button>
+      </div>
+    </div>
+  </div>

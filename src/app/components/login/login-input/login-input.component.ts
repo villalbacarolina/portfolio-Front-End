@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, AbstractControl, FormGroup} from '@angular/forms'
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-input',
@@ -10,29 +11,15 @@ export class LoginInputComponent {
 
     //campos reactivos
     form: FormGroup = new FormGroup({
-      fullname: new FormControl(''),
-      username: new FormControl(''),
       email: new FormControl(''),
-      password: new FormControl(''),
-      confirmPassword: new FormControl(''),
-      acceptTerms: new FormControl(false),
+      password: new FormControl('')
     });
     submitted = false;
   
-    constructor(private formBuilder: FormBuilder) {}
-  
-    ngOnInit(): void {
+    constructor(private formBuilder: FormBuilder, private userServ: UserService) {
+
       this.form = this.formBuilder.group(
         {
-          //fullname: ['', Validators.required],
-          username: [
-            '',
-            [
-              Validators.required,
-              Validators.minLength(6),
-              Validators.maxLength(20)
-            ]
-          ],
           email: ['', [Validators.required, Validators.email]],
           password: [
             '',
@@ -41,11 +28,12 @@ export class LoginInputComponent {
               Validators.minLength(6),
               Validators.maxLength(40)
             ]
-          ],
-          confirmPassword: ['', Validators.required],
-          acceptTerms: [false, Validators.requiredTrue]
+          ]
         }
       );
+    }
+  
+    ngOnInit(): void {
     }
   
     //traer datos
@@ -59,12 +47,14 @@ export class LoginInputComponent {
     onSubmit(): void {
       this.submitted = true;
   
-      if (this.form.invalid) {
-        return;
+      if (this.form.valid) {
+        this.userServ.login(this.form.value).subscribe(data => {
+          console.log(data);
+        });
       }
-  
+  //oink
       //ver datos en el inspeccionador. se puede borrar
-      console.log(JSON.stringify(this.form.value, null, 2));
+      //console.log(JSON.stringify(this.form.value, null, 2));
     }
   
     //reiniciar formulario

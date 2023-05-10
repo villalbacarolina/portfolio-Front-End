@@ -21,6 +21,7 @@ import { IndexComponent } from './components/index/index.component';
 import { HardSkillsComponent } from './components/skills/hard-skills/hard-skills.component';
 import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
 import { EducationAddModalComponent } from './modals/education/education-add-modal.component';
+import { ExperienceAddComponent } from './modals/experience-add/experience-add.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EducationAddModalComponent } from './modals/education/education-add-mod
     IndexComponent,
     HardSkillsComponent,
     SoftSkillsComponent,
-    EducationAddModalComponent
+    EducationAddModalComponent,
+    ExperienceAddComponent
   ],
   imports: [
     BrowserModule,

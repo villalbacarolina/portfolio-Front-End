@@ -63,7 +63,7 @@ export class EducationComponent implements OnInit {
     this.educationModel.startDate = this.formValue.value.startDate;
     this.educationModel.endDate = this.formValue.value.endDate;
 
-    this.edServ.putData(this.educationModel, this.educationModel.id)
+    this.edServ.putData(this.educationModel)
     .subscribe(res => {
       alert("Editado correctamente.")
       let ref= document.getElementById('cancel');

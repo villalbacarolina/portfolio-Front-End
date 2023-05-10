@@ -1,5 +1,5 @@
 <div class="login-form">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form"> <!-- (ngSubmit)="onSubmit()" -->
 
         <!--
       <div class="form-group">
@@ -58,17 +58,17 @@
       </div>
   
   
-      <div class="form-group form-check">
+      <!-- <div class="form-group form-check">
         <input type="checkbox" formControlName="acceptTerms" class="form-check-input" style=" background-color: #fa4347; border-style: none; border-radius: 0px;"
           [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"/>
         <label for="acceptTerms" class="form-check-label">Recordarme.</label>
         <div *ngIf="submitted && f['acceptTerms'].errors" class="valid-feedback"></div>
-      </div>
+      </div> -->
   
 
       <div class="botones">
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Acceder</button>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary">Acceder</button>
       </div>
       
     </div>
