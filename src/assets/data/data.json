@@ -1,5 +1,12 @@
 {
 
+    "message":"Autenticación aceptada",
+    "id":"1",
+    "name":"a",
+    "lastName":"b",
+    "email":"hola@gmail.com"
+
+    /*
     "about":
     [
         {
@@ -134,7 +141,7 @@
             "banner":"https://images.contentstack.io/v3/assets/blt187521ff0727be24/bltc6e788b11a9c8245/60ee0f71a86d0f5a0be449a3/MissFortune_0.jpg"
         }
     ]
-    
+    */
     
 
 }

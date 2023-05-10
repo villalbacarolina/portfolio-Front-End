@@ -1,4 +1,10 @@
 export class User{
+
+    id!:number;
+    email?:string;
+    message?:string;
+
+    /*
     private id!: number;
     private email:string;
     private  password:string;
@@ -20,5 +26,5 @@ export class User{
     getEmail():string{
         return this.email
     }
-
+*/
 }

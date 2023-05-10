@@ -2,37 +2,35 @@
     <div class="container-fluid">
         
         <!--logo-->
-        <a class="navbar-brand" href="/"> <!--link/tamanio-->
-            <img src="https://fekouti.com/img/arg-prog.png" alt="Logo" width="137" height="40" class="d-inline-block align-text-center">
-        </a>
+        <a class="navbar-brand" href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa">
+            <img src="https://fekouti.com/img/arg-prog.png" alt="logo" width="137" height="40" class="d-inline-block align-text-center">
+        </a> <!-- mejorar tamaños -->
         
         <!--menu icon-->
         <button class="navbar-toggler custom-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!--opened menu-->
+
         <div class="collapse navbar-collapse" id="menu">
-            <!--recorrer-->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
-                <li class="nav-link" *ngFor="let platform of socialMedia"> <!--ngIf-->
-                    <a href="#"> <!-- rellenar dato-->
-                        <img src="../../assets/svg/github.svg" 
-                        alt="Linkedin icon" height="40" width="40" /> <!--mejorar tamanio-->
-                        <!--rellenar dato-->
-                    </a> <!--rellenar dato-->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0"  *ngFor="let platform of socialMedia">
+                <li class="nav-link" *ngIf="logged">
+                    <a [href]="platform.url"> 
+                        <img [src]="platform.img" alt="icon" height="40" width="40" /> 
+                    </a> 
                 </li>
             </ul>
 
-
-        <!-- log in button-->
-        <!--editar disenio en componente aparte, falta el de salir-->
-
-          <!--*ngIf="!loggedIn" (click)="signIn()" 
-          *ngIf="loggedIn" (click)="signOut()"-->
-            <li class="nav-link">
-                <a routerLink="/acceder">
+            <li class="nav-link" *ngIf="!logged">
+                <a routerLink="/acceder" >
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Acceder
+                    </button>
+                </a>
+            </li>
+            <li class="nav-link" *ngIf="logged">
+                <a routerLink="/acceder">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cerrar sesión
                     </button>
                 </a>
             </li>
