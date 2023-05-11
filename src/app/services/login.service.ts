@@ -17,6 +17,10 @@ export class LoginService {
 
   login(credentials: loginRequest):Observable<User>{
     return this.http.get<User>('./assets/data/data.json').pipe(
+      tap((UserData: User) =>{
+        this.currentUserData.next(UserData);
+        this.currentUserLoginOn.next(true);
+      }),
       catchError(this.handleError)
     );
   }
@@ -27,6 +31,14 @@ export class LoginService {
     else
       console.error("Backend retornó el código de estado", error.status, error.error);
     return throwError(()=> new Error("Algo falló. Por favor intente nuevamente"))
+  }
+
+  get userData(): Observable<User>{
+    return this.currentUserData.asObservable();
+  }
+
+  get userLoginOn(): Observable<boolean>{
+    return this.currentUserLoginOn.asObservable();
   }
 
   /*

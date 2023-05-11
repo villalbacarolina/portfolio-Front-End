@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, AbstractControl, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
 import { loginRequest } from 'src/app/model/loginRequest';
@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './login-input.component.html',
   styleUrls: ['./login-input.component.css']
 })
-export class LoginInputComponent {
+export class LoginInputComponent implements OnDestroy{
 
     //campos reactivos
   loginForm: FormGroup = new FormGroup({
@@ -27,6 +27,11 @@ export class LoginInputComponent {
         password: ['',[Validators.required, Validators.minLength(6), Validators.maxLength(40)]]
       });
 
+  }
+  
+  ngOnDestroy(): void {
+    this.loginServ.currentUserData.unsubscribe();
+    this.loginServ.currentUserLoginOn.unsubscribe();
   }
 
   login() {

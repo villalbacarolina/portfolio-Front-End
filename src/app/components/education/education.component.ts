@@ -1,35 +1,54 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Education } from 'src/app/model/education';
+import { User } from 'src/app/model/user';
 import { EducationService } from 'src/app/services/education.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit { 
+export class EducationComponent implements OnInit, OnDestroy { 
 
   @Output() output: EventEmitter<any> = new EventEmitter();
   formValue !: FormGroup;
   educationModel: Education = new Education();
   educations:any=[];
-  logged:boolean=true;
+  loginOn:boolean=true;
+  userData?: User;
 
-  constructor(private edServ: EducationService, private fb: FormBuilder){}
+  constructor(private edServ: EducationService, private fb: FormBuilder, private loginServ:LoginService){
+    this.formValue = this.fb.group({
+      title:[''],
+      institution:[''],
+      startDate:[''],
+      endDate:[''],
+      url:['']
+        })
+      this.getEducations();
+      this.edServ.output.subscribe(data =>{
+        console.log('Recibiendo: ',data);
+      })
+  }
+
+  ngOnDestroy(): void {
+    this.loginServ.currentUserData.unsubscribe();
+    this.loginServ.currentUserLoginOn.unsubscribe();
+  }
 
   ngOnInit(): void {
-    this.formValue = this.fb.group({
-    title:[''],
-    institution:[''],
-    startDate:[''],
-    endDate:[''],
-    url:['']
-      })
-    this.getEducations();
-    this.edServ.output.subscribe(data =>{
-      console.log('Recibiendo: ',data);
-    })
+    this.loginServ.currentUserLoginOn.subscribe({
+      next: (loginOn)=>{
+        this.loginOn=loginOn;
+      }
+    });
+    this.loginServ.currentUserData.subscribe({
+      next: (userData)=>{
+        this.userData=userData;
+      }
+    });
   }
 
   getEducations(){

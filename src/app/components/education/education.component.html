@@ -1,6 +1,6 @@
 <section>
     <article>
-        <h3>ESTUDIOS</h3> <app-education-add-modal *ngIf="logged"></app-education-add-modal>
+        <h3>ESTUDIOS</h3> <app-education-add-modal *ngIf="loginOn"></app-education-add-modal>
         <ul id="title" *ngFor="let education of educations"> 
 
             <li>
@@ -9,9 +9,9 @@
                 <p>{{education.institution}}</p>  
                 <p *ngIf="education.startDate"> | {{education.startDate}}</p>  
                 <p *ngIf="education.endDate && education.startDate"> - {{education.endDate}}</p>
-                <div class="buttons" *ngIf="logged">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="onEdit(education)" data-bs-target="#education-edit" >Editar</button>
-                    <button type="button" *ngIf="logged" (click)="deleteEducation(education)" class="btn btn-primary" >Borrar</button>
+                <div class="buttons" *ngIf="loginOn">
+                    <button type="button" (click)="onEdit(education)" data-bs-target="#education-edit" class="btn btn-primary" data-bs-toggle="modal"   >Editar</button>
+                    <button type="button" (click)="deleteEducation(education)" class="btn btn-primary" >Borrar</button>
                 </div>
             </li>
 
