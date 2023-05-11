@@ -1,6 +1,9 @@
 <section>
     <article>
-        <h3>ESTUDIOS</h3> <app-education-add-modal *ngIf="loginOn"></app-education-add-modal>
+        <h3>ESTUDIOS</h3> 
+        <div *ngIf="loginOn">
+          <app-education-add-modal *ngIf="loginOn"></app-education-add-modal>
+        </div>
         <ul id="title" *ngFor="let education of educations"> 
 
             <li>

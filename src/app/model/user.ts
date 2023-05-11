@@ -2,8 +2,8 @@ export class User{
 
     id!:number;
     email?:string;
-    message?:string;
-
+    password?:string;
+    
     /*
     private id!: number;
     private email:string;

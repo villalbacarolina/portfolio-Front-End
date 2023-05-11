@@ -13,21 +13,21 @@
 
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0"  *ngFor="let platform of socialMedia">
-                <li class="nav-link" *ngIf="logged">
+                <li class="nav-link" *ngIf="loginOn">
                     <a [href]="platform.url"> 
                         <img [src]="platform.img" alt="icon" height="40" width="40" /> 
                     </a> 
                 </li>
             </ul>
 
-            <li class="nav-link" *ngIf="!logged">
+            <li class="nav-link" *ngIf="!loginOn">
                 <a routerLink="/acceder" >
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Acceder
                     </button>
                 </a>
             </li>
-            <li class="nav-link" *ngIf="logged">
+            <li class="nav-link" *ngIf="loginOn">
                 <a routerLink="/acceder">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Cerrar sesión

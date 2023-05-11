@@ -91,17 +91,6 @@ export class EducationComponent implements OnInit, OnDestroy {
       this.getEducations;
     })
   }
-  
-  /*
-  logIn(): boolean {
-    this.logged = true;
-    return this.logged;
-  }
-
-  logOut(): boolean {
-    this.logged = false;
-    return this.logged;
-  }*/
 
 }
 
