@@ -1,0 +1,42 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#about-me">
+    Añadir
+</button>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="about-me" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar "Acerca de mí"</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+              <div>
+                <label>Nombre completo:</label><br>
+                <input type="text" formControlName="fullName" maxlength="80" >
+              </div>
+              <div>
+                <label>Perfil profesional:</label><br>
+                <input type="text" formControlName="professionalProfile" maxlength="40">
+              </div>
+              <div>
+                <label>URL de la foto de perfil:</label>
+                <br>
+                <input type="text" formControlName="profilePicture">
+              </div>
+              <div>
+                <label>Descripción:</label>
+                <br>
+                <input type="text" formControlName="description" maxlength="40">
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" (click)="postAboutMe()" class="btn btn-primary">Añadir</button>
+      </div>
+    </div>
+  </div>

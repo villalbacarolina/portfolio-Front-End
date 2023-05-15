@@ -1,7 +1,8 @@
 {
     "/api/*":{
-        "target":"http://localhost:4200",
+        "target":"https://carolina-angeles.web.app/",
         "secure":false,
         "logLevel": "debug"
     }
+    
 }

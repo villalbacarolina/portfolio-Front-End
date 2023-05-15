@@ -28,8 +28,15 @@ export class ExperienceService {
     }))
   }
 
-  putData(data:any, id:number){ 
-    return this.http.put<any>(this.url + "experiencia/editar/"+id, data)
+  // putData(data:any, id:number){ 
+  //   return this.http.put<any>(this.url + "experiencia/editar/"+id, data)
+  //   .pipe(map( (res:any)=>{
+  //     return res;
+  //   }))
+  // }
+
+  putData(data:any){ 
+    return this.http.put<any>(this.url + "experiencia/editar", data)
     .pipe(map( (res:any)=>{
       return res;
     }))

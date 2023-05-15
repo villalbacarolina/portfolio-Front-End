@@ -3,20 +3,61 @@
     <div class="projects-fluid text-center">
         <div class="row">
             <div class="col">
-                <h3>PROYECTOS</h3>
+                <h3>PROYECTOS</h3> <app-project-add-modal></app-project-add-modal>
             </div>
             <div class="col-9">
-
-                <div class="project" *ngFor="let project of projects">
+              <a [href]="project.url" *ngFor="let project of projects">
+                <div class="project" >
+                    
                     <img [src]="project.img" alt="imagen del proyecto">
                     <div class="text">
                         <h4>{{project.title | uppercase}}</h4>
+                        <div class="buttons"> <!--*ngIf="loginOn"-->
+                            <button type="button"  (click)="onEdit(project)" data-bs-target="#project-edit" class="btn btn-primary" data-bs-toggle="modal">Editar</button>
+                            <button type="button" (click)="deleteProject(project)" class="btn btn-primary" >Borrar</button>
+                        </div>
                         <p>{{project.description}}</p>
                     </div>
                 </div>
-                
+              </a>
             </div>
         </div>
     </div>
     </article>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="project-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar proyecto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+              <div>
+                <label>Título:</label><br>
+                <input type="text" formControlName="title" maxlength="60" >
+              </div>
+              <div>
+                <label>Descripción:</label><br>
+                <input type="text" formControlName="description" maxlength="150">
+              </div>
+              <div>
+                <label>URL del proyecto:</label><br>
+                <input type="text" formControlName="url">
+              </div>
+              <div>
+                <label>URL de la imagen:</label><br>
+                <input type="text" formControlName="img" maxlength="200">
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button"  class="btn btn-primary" (click)="updateProject()">Editar</button>
+      </div>
+    </div>
+  </div>

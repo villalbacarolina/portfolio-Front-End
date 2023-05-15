@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -7,19 +7,21 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit, OnDestroy {
   socialMedia:any=[];
+  /* INTENTO 2 LOGIN*/
   loginOn:boolean=true;
   userData?: User;
   
  
   constructor(private loginServ:LoginService){}
-  /*
+  
+  
   ngOnDestroy(): void {
-    this.loginServ.currentUserData.unsubscribe();
-    this.loginServ.currentUserLoginOn.unsubscribe();
+    //this.loginServ.currentUserData.unsubscribe();
+    //this.loginServ.currentUserLoginOn.unsubscribe();
   }
-  */
+  
 
   ngOnInit(): void {
     this.loginServ.currentUserLoginOn.subscribe({

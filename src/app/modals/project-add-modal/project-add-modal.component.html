@@ -1,0 +1,40 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project-add">
+    Añadir
+</button>
+  
+
+<!-- Modal -->
+  <div class="modal fade" id="project-add" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Añadir un proyecto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+                <div>
+                    <label>Título:</label><br>
+                    <input type="text" formControlName="title" maxlength="60" >
+                </div>
+                <div>
+                    <label>Descripción:</label><br>
+                    <input type="text" formControlName="description" maxlength="150">
+                </div>
+                <div>
+                    <label>URL:</label><br>
+                    <input type="text" formControlName="url">
+                </div>
+                <div>
+                    <label>Imagen:</label><br>
+                    <input type="text" formControlName="img" maxlength="200">
+                </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" (click)="postProject()" class="btn btn-primary">Añadir</button>
+      </div>
+    </div>
+  </div>

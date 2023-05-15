@@ -1,5 +1,5 @@
 <div class="login-form">
-    <form [formGroup]="loginForm"> <!-- (ngSubmit)="onSubmit()" -->
+    <form [formGroup]="loginForm" > <!-- (ngSubmit)="onSubmit()" -->
      
       <p class="text-danger">{{loginError}}</p>
 
@@ -44,7 +44,7 @@
       <div class="botones">
         <div class="form-group">
           <button type="button" (click)="login()" class="btn btn-primary">Iniciar sesión</button>
-        </div>
+        </div> <!--(click)="login()"-->
       </div>
 
     </form>

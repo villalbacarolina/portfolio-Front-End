@@ -1,9 +1,13 @@
 export class User{
 
+    /* INTENTO 2 LOGIN*/
+    
     id!:number;
     email?:string;
     password?:string;
+   
     
+    /* INTENTO 1 LOGIN*/
     /*
     private id!: number;
     private email:string;
@@ -26,5 +30,5 @@ export class User{
     getEmail():string{
         return this.email
     }
-*/
+ */
 }

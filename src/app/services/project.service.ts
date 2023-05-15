@@ -28,8 +28,8 @@ export class ProjectService {
     }))
   }
 
-  putData(data:any, id:number){ 
-    return this.http.put<any>(this.url + "proyecto/editar/"+id, data)
+  putData(data:any){ 
+    return this.http.put<any>(this.url + "proyecto/editar", data)
     .pipe(map( (res:any)=>{
       return res;
     }))

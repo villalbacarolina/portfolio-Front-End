@@ -7,6 +7,9 @@
             </div>
             <div class="col-9">
                 <h3>ACERCA DE MÍ</h3>
+                <div *ngFor="let ab of aboutMe">
+                    <button type="button" (click)="onEdit(ab)" data-bs-target="#about-me-edit" class="btn btn-primary" data-bs-toggle="modal">Editar</button>
+                </div>
             </div>
         </div>
   
@@ -21,3 +24,42 @@
     </div>  
 </article>
 </section>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="about-me-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar acerca de mí</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+          
+            <form [formGroup]="formValue">
+                <div>
+                  <label>Nombre completo:</label><br>
+                  <input type="text" formControlName="fullName" maxlength="80" >
+                </div>
+                <div>
+                  <label>Perfil profesional:</label><br>
+                  <input type="text" formControlName="professionalProfile" maxlength="40">
+                </div>
+                <div>
+                  <label>URL de la foto de perfil:</label>
+                  <br>
+                  <input type="text" formControlName="profilePicture">
+                </div>
+                <div>
+                  <label>Descripción:</label>
+                  <br>
+                  <input type="text" formControlName="description" maxlength="40">
+                </div>
+              </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" (click)="updateAboutMe()" class="btn btn-primary">Editar</button>
+      </div>
+    </div>
+  </div>

@@ -10,13 +10,17 @@ import { loginRequest } from '../model/loginRequest';
 })
 export class LoginService {
 
+
+  /*INTENTO 2 DE LOGIN*/
+  
   currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   currentUserData: BehaviorSubject<User> = new BehaviorSubject<User>({id:0,email:''});
+  url:string = environment.apiURL;
   
   constructor (private http: HttpClient){}
 
   login(credentials: loginRequest):Observable<User>{
-    return this.http.get<User>('./assets/data/data.json').pipe(
+    return this.http.get<User>('../../assets/data/data.json').pipe(
       tap((UserData: User) =>{
         this.currentUserData.next(UserData);
         this.currentUserLoginOn.next(true);
@@ -40,7 +44,10 @@ export class LoginService {
   get userLoginOn(): Observable<boolean>{
     return this.currentUserLoginOn.asObservable();
   }
+  
 
+
+  /*INTENTO 1 DE LOGIN*/
   /*
   private user: User | undefined;
   private login$=new BehaviorSubject<boolean>(false);
@@ -55,22 +62,18 @@ export class LoginService {
   setStatusLogin(status:boolean){
     this.login$.next(status);
   }
-    // ( sessionStorage.getItem("user_name")==null) ? this.EstadoLogin=true : this.EstadoLogin=false
 
-  login(data:any):Observable<any>{
-    console.log(data)
-    this.user=new User(data.username,data.password)
-      //  this.user.setEmail(dato.username);
-      // this.user.setPassword(dato.password)      
-      //http://localhost:8080
-    return this.http.post<any>(this.url+'/login',this.user)
+  login():Observable<any>{
+    //console.log("Datos entraron el servicio "+data)
+    return this.http.get<any>('././assets/data/data.json')
          .pipe(
             tap(
                 res=>{
                   console.log(res)
-                }
+                  console.log(res.email==data.email)
+                } 
             )
           )
-  }
-  */
+          
+  }*/
 }

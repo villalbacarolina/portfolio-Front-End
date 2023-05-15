@@ -4,7 +4,7 @@
         <!--logo-->
         <a class="navbar-brand" href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa">
             <img src="https://fekouti.com/img/arg-prog.png" alt="logo" width="137" height="40" class="d-inline-block align-text-center">
-        </a> <!-- mejorar tamaños -->
+        </a>
         
         <!--menu icon-->
         <button class="navbar-toggler custom-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,19 +20,22 @@
                 </li>
             </ul>
 
-            <li class="nav-link" *ngIf="!loginOn">
+            <li class="nav-link"*ngIf="!loginOn"> 
                 <a routerLink="/acceder" >
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary">
                     Acceder
                     </button>
                 </a>
             </li>
-            <li class="nav-link" *ngIf="loginOn">
+
+            <!-- INTENTO 2 LOGIN -->
+            <li class="nav-link" *ngIf="loginOn">   
                 <a routerLink="/acceder">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary">
                     Cerrar sesión
                     </button>
                 </a>
+                
             </li>
       </div>
   

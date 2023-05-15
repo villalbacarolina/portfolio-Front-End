@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './login-input.component.html',
   styleUrls: ['./login-input.component.css']
 })
-export class LoginInputComponent implements OnDestroy{
+export class LoginInputComponent implements OnDestroy {
 
     //campos reactivos
   loginForm: FormGroup = new FormGroup({
@@ -28,7 +28,8 @@ export class LoginInputComponent implements OnDestroy{
       });
 
   }
-  
+  /* INTENTO 2 DE LOGIN */
+ 
   ngOnDestroy(): void {
     this.loginServ.currentUserData.unsubscribe();
     this.loginServ.currentUserLoginOn.unsubscribe();
@@ -56,7 +57,7 @@ export class LoginInputComponent implements OnDestroy{
       alert("Error al ingresar los datos");
       this.loginForm.markAllAsTouched;
   }
-
+  
   get email() {
     return this.loginForm.controls['email'];
   }
@@ -64,7 +65,21 @@ export class LoginInputComponent implements OnDestroy{
     return this.loginForm.controls['password'];
   }
   
-  
+   /*
+  login() {
+    if(this.loginForm.valid){
+      console.log("Llamar al servicio login");
+      this.loginServ.login().subscribe( data=>{
+        console.log(data + "hola json");
+      })
+    }
+    else
+      alert("Error al ingresar los datos");
+      this.loginForm.markAllAsTouched;
+  }
+  */
+
+
      /*
     //traer datos
     get f(): { [key: string]: AbstractControl } {

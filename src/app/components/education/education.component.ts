@@ -16,8 +16,10 @@ export class EducationComponent implements OnInit, OnDestroy {
   formValue !: FormGroup;
   educationModel: Education = new Education();
   educations:any=[];
+  /* INTENTO 2 DE LOGIN */
   loginOn:boolean=true;
   userData?: User;
+  
 
   constructor(private edServ: EducationService, private fb: FormBuilder, private loginServ:LoginService){
     this.formValue = this.fb.group({
@@ -33,6 +35,8 @@ export class EducationComponent implements OnInit, OnDestroy {
       })
   }
 
+  /* INTENTO 2 DE LOGIN */
+  
   ngOnDestroy(): void {
     this.loginServ.currentUserData.unsubscribe();
     this.loginServ.currentUserLoginOn.unsubscribe();
@@ -50,6 +54,7 @@ export class EducationComponent implements OnInit, OnDestroy {
       }
     });
   }
+  
 
   getEducations(){
     this.edServ.getData().subscribe(res =>{
@@ -91,6 +96,7 @@ export class EducationComponent implements OnInit, OnDestroy {
       this.getEducations;
     })
   }
+  
 
 }
 

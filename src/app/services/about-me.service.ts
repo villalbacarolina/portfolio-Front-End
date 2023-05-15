@@ -28,12 +28,21 @@ export class AboutMeService {
     }))
   }
 
-  putData(data:any, id:number){ 
-    return this.http.put<any>(this.url + "acerca-de-mi/editar/"+id, data)
+  putData(data:any){ 
+    return this.http.put<any>(this.url + "acerca-de-mi/editar/", data)
     .pipe(map( (res:any)=>{
       return res;
     }))
   }
+
+  /*
+  deleteData(id:number){ 
+    return this.http.delete<any>(this.url + 'acerca-de-mi/eliminar/'+id)
+    .pipe(map( (res:any)=>{
+      return res;
+    }))
+  }
+  */
 
   
 }
