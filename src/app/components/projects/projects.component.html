@@ -6,20 +6,22 @@
                 <h3>PROYECTOS</h3> <app-project-add-modal></app-project-add-modal>
             </div>
             <div class="col-9">
-              <a [href]="project.url" *ngFor="let project of projects">
-                <div class="project" >
-                    
+              
+                <div class="project" *ngFor="let project of projects">
+                    <div class="buttons"> <!--*ngIf="loginOn"-->
+                      <button type="button"  (click)="onEdit(project)" data-bs-target="#project-edit" class="btn btn-primary" data-bs-toggle="modal">Editar</button>
+                      <button type="button" (click)="deleteProject(project)" class="btn btn-primary" >Borrar</button>
+                    </div>
+                    <a [href]="project.url" >
                     <img [src]="project.img" alt="imagen del proyecto">
                     <div class="text">
                         <h4>{{project.title | uppercase}}</h4>
-                        <div class="buttons"> <!--*ngIf="loginOn"-->
-                            <button type="button"  (click)="onEdit(project)" data-bs-target="#project-edit" class="btn btn-primary" data-bs-toggle="modal">Editar</button>
-                            <button type="button" (click)="deleteProject(project)" class="btn btn-primary" >Borrar</button>
-                        </div>
+                        
                         <p>{{project.description}}</p>
                     </div>
+                    </a>
                 </div>
-              </a>
+             
             </div>
         </div>
     </div>
